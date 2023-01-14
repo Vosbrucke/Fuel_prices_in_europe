@@ -50,8 +50,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   # Read fuel price data
-  fuel_price_EU <- read_csv("Processed_data/fuel_price_EU.csv") %>% 
-    mutate(date = as.Date(date))
+  fuel_price_EU <- read_csv("https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Processed_data/fuel_price_EU.csv")
   
   palette <- reactive({wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")})
 

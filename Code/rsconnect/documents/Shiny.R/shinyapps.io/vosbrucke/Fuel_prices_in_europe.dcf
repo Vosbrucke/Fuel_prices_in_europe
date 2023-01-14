@@ -1,0 +1,13 @@
+name: Fuel_prices_in_europe
+title: Fuel_prices_in_europe
+username:
+account: vosbrucke
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8036017
+bundleId: 6732937
+url: https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/
+when: 1673697805.27368
+lastSyncTime: 1673697805.27369
+asMultiple: FALSE
+asStatic: FALSE
