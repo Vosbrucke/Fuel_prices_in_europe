@@ -1,0 +1,11 @@
+Package: Fuel_prices_in_europe
+Title: Running R script with a GitHub Actions
+Version: 0.0.0.9000
+Authors@R: 
+    person("Szymon", "Lisowski", , "szymonlisowski99@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: The package downloads and processes data on fuel prices in Europe
+License: MIT
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.0

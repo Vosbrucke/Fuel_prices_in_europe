@@ -1,12 +1,11 @@
-library(tidyverse)
 library(lubridate)
 library(openxlsx)
-library(rvest)
+library(dplyr)
+library(magrittr)
+library(stringr)
 
 # Read bulletin data
 oil_bulletin <- read.xlsx("https://ec.europa.eu/energy/observatory/reports/Oil_Bulletin_Prices_History.xlsx", sheet = "Prices with taxes, per CTR")
-
-# Gas oil de chauffage Heating gas oil Heizöl (II)	 Fuel oil - Schweres Heizöl (III) Soufre <= 1% Sulphur <= 1% Schwefel <= 1%	
 
 # Name columns
 colnames(oil_bulletin) <- letters[1:8]
@@ -114,26 +113,26 @@ countries_eu <- countries_eu %>%
 # Write csv
 write_csv(countries_eu, "Processed_data/countries_eu_inflation.csv") 
 
-# Web scrape special aggregates for inflation categories
-special_aggregates <- read_html("https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=HICP_2000&StrLanguageCode=EN&IntPcKey=37598921&StrLayoutCode=HIERARCHIC") %>% 
-  html_nodes(".text") %>% html_text2()
-
-# Select only upper elements in the list- the actual aggregates
-special_aggregates_u <- special_aggregates[
-  grepl("[[:upper:]]+$", special_aggregates)]
-
-# Adjust it
-special_aggregates_u <- special_aggregates_u[-c(1:3)]
-
-# Select only lower elements in the list- description of the aggregates
-special_aggregates_l <- special_aggregates[
-  grepl("[[:lower:]]", special_aggregates)]
-
-# Adjust it and remove some left overs
-special_aggregates_l <- special_aggregates_l[6:42] %>% stringr::str_remove("\n")
-
-# Make a tibble
-special_aggregates <- tibble(special_aggregates_u, special_aggregates_l)
-
-# Write csv
-write_csv(special_aggregates, "Processed_data/special_aggregates.csv")
+# # Web scrape special aggregates for inflation categories
+# special_aggregates <- read_html("https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=HICP_2000&StrLanguageCode=EN&IntPcKey=37598921&StrLayoutCode=HIERARCHIC") %>% 
+#   html_nodes(".text") %>% html_text2()
+# 
+# # Select only upper elements in the list- the actual aggregates
+# special_aggregates_u <- special_aggregates[
+#   grepl("[[:upper:]]+$", special_aggregates)]
+# 
+# # Adjust it
+# special_aggregates_u <- special_aggregates_u[-c(1:3)]
+# 
+# # Select only lower elements in the list- description of the aggregates
+# special_aggregates_l <- special_aggregates[
+#   grepl("[[:lower:]]", special_aggregates)]
+# 
+# # Adjust it and remove some left overs
+# special_aggregates_l <- special_aggregates_l[6:42] %>% stringr::str_remove("\n")
+# 
+# # Make a tibble
+# special_aggregates <- tibble(special_aggregates_u, special_aggregates_l)
+# 
+# # Write csv
+# write_csv(special_aggregates, "Processed_data/special_aggregates.csv")
