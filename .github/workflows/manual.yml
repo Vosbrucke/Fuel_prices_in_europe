@@ -33,10 +33,7 @@ jobs:
         run: |
           install.packages('remotes')
           install.packages('sessioninfo')
-          install.packages('tidyverse')
-          install.packages('lubridate')
-          install.packages('rvest')
-          install.packages('openxlsx')
+          install.packages(c('tidyverse', 'lubridate', 'openxlsx', 'magrittr', 'stringr'))
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
