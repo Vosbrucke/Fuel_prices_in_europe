@@ -78,13 +78,13 @@ fuel_price_EU <- tibble(code = countries, fuel_price) %>%
   mutate(
     Euro_super_95 = round(as.numeric(Euro_super_95)) / 1000,
     Diesel = round(as.numeric(Diesel)) / 1000,
-    )
+  )
 
 # Change a code for Greece to 'EL'. This will be important in plotting when other eurostat databases use 'EL' code for Greece
 fuel_price_EU$code[fuel_price_EU$code == "GR"] <- "EL"
 
 # Read csv for countries full names
-countries_all <- read.csv("Processed_data/slim-2_pl.csv", sep = ";", na.strings = "blank") %>% 
+countries_all <- read.csv("https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Processed_data/slim-2_pl.csv", sep = ";", na.strings = "blank") %>% 
   select(-"country.code") %>% 
   rename(country_name = name, country_name_pl = name_pl, code = "alpha.2")
 
@@ -99,19 +99,19 @@ fuel_price_EU %<>%
   left_join(countries_eu, by = "code")
 
 # Write csv with fuel price
-write_csv(fuel_price_EU, "Processed_data/fuel_price_EU.csv")
+write.csv(fuel_price_EU, "Processed_data/fuel_price_EU.csv")
 
 
-# Make additional tibble for other regions
-additional_countries_code <-  tibble(code = c("EA19", "EA", "EU"), country_name = c("Euro area (19 countries)", "Euro area", "European Union"), country_name_pl = c("Kraje strefy euro (19 krajów)", "Kraje strefy euro", "Unia Europejska"))
-
-# Joing two data frames by binding rows
-countries_eu <- countries_eu %>% 
-  bind_rows(additional_countries_code) %>% 
-  arrange(code)
-
-# Write csv
-write_csv(countries_eu, "Processed_data/countries_eu_inflation.csv") 
+# # Make additional tibble for other regions
+# additional_countries_code <-  tibble(code = c("EA19", "EA", "EU"), country_name = c("Euro area (19 countries)", "Euro area", "European Union"), country_name_pl = c("Kraje strefy euro (19 krajów)", "Kraje strefy euro", "Unia Europejska"))
+# 
+# # Joing two data frames by binding rows
+# countries_eu <- countries_eu %>% 
+#   bind_rows(additional_countries_code) %>% 
+#   arrange(code)
+# 
+# # Write csv
+# write.csv(countries_eu, "Processed_data/countries_eu_inflation.csv") 
 
 # # Web scrape special aggregates for inflation categories
 # special_aggregates <- read_html("https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=HICP_2000&StrLanguageCode=EN&IntPcKey=37598921&StrLayoutCode=HIERARCHIC") %>% 
@@ -136,3 +136,4 @@ write_csv(countries_eu, "Processed_data/countries_eu_inflation.csv")
 # 
 # # Write csv
 # write_csv(special_aggregates, "Processed_data/special_aggregates.csv")
+
