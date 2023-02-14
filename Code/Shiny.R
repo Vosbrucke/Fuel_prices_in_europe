@@ -41,7 +41,12 @@ ui <- fluidPage(
     mainPanel(
       plotOutput(
         "fuel_prices",
-        height = "400px",
+        # height = "400px",
+        height = height = function() {
+          if (session$clientData$output_plot_width <= 1000) {
+            (session$clientData$output_plot_width)*(3/4)
+          } else { (session$clientData$output_plot_width)*(7/16) }
+        },
         width = "100%"
         )
       )
