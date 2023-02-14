@@ -41,7 +41,8 @@ ui <- fluidPage(
     mainPanel(
       plotOutput(
         "fuel_prices",
-        height = "400px"
+        height = "400px",
+        width = "100%"
         )
       )
   )
