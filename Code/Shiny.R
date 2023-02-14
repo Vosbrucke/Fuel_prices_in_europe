@@ -210,7 +210,7 @@ server <- function(input, output) {
         x = NULL, 
         y = NULL, 
         title = paste("Price of", tolower(fuel()), "among EU Member States on", format(max(react_df() %>% pull(date)), "%d %B %Y")), 
-        caption = paste("Data source: Oil Bulletin. European Commission, ", format(Sys.Date(), "%Y"), "\nAuthor: Szymon Lisowski")
+        caption = paste("Data source: Oil Bulletin. European Commission, ", format(Sys.Date(), "%Y"), "; Author: Szymon Lisowski")
         ) + 
       theme_classic() +
       theme(
