@@ -9,11 +9,13 @@ library(lubridate)
 library(patchwork)
 library(glue)
 library(ggh4x)
+library(shinybrowser)
 
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
   theme = shinytheme("cosmo"),
   navbarPage(title = "Average fuel prices"),
+  shinybrowser::detect(),
   sidebarLayout(
     sidebarPanel(
       selectInput(
@@ -41,13 +43,6 @@ ui <- fluidPage(
     mainPanel(
       plotOutput(
         "fuel_prices",
-        # height = "400px",
-        height = height = function() {
-          if (session$clientData$output_plot_width <= 1000) {
-            (session$clientData$output_plot_width)*(3/4)
-          } else { (session$clientData$output_plot_width)*(7/16) }
-        },
-        width = "100%"
         )
       )
   )
@@ -107,6 +102,13 @@ server <- function(input, output) {
         xend = rep(round_date(as.Date(max(react_df()$date)) + days(155), "year"), 5),
         yend = seq(0.5, 2.5, 0.5)
         )
+      
+      # Determine if the width of the plot is enough for the whole title
+      if (shinybrowser::get_width() > 1500) {
+        title <- paste("Price of", tolower(fuel()), "among EU Member States on", format(max(react_df() %>% pull(date)), "%d %B %Y")) 
+      } else {
+        title <- paste("Price of", tolower(fuel()), "among\nEU Member States on", format(max(react_df() %>% pull(date)), "%d %B %Y")) 
+      }
       
       ggplot(data = fuel_price_EU_0(), aes(x = date, y = fuel, group = country_name)) +
       # Make lines for y axis that does not go beyond scale_x_continuous limits
@@ -209,8 +211,8 @@ server <- function(input, output) {
       labs(
         x = NULL, 
         y = NULL, 
-        title = paste("Price of", tolower(fuel()), "among EU Member States on", format(max(react_df() %>% pull(date)), "%d %B %Y")), 
-        caption = paste("Data source: Oil Bulletin. European Commission, ", format(Sys.Date(), "%Y"), "; Author: Szymon Lisowski")
+        title = title,
+        caption = paste("Data source: Oil Bulletin. European Commission, ", format(Sys.Date(), "%Y"), "\nAuthor: Szymon Lisowski")
         ) + 
       theme_classic() +
       theme(
@@ -232,4 +234,4 @@ server <- function(input, output) {
   })
 }
 
-shinyApp(ui = ui, server = server)
+shinyApp(ui, server)
