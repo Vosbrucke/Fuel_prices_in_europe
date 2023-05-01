@@ -14,7 +14,7 @@ library(shinybrowser)
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
   theme = shinytheme("cosmo"),
-  navbarPage(title = "Average fuel prices"),
+  navbarPage(title = "Consumer prices of petroleum products"),
   shinybrowser::detect(),
   sidebarLayout(
     sidebarPanel(
@@ -28,7 +28,7 @@ ui <- fluidPage(
       selectInput(
         "selected_fuel", 
         "Select a fuel to plot", 
-        choices = list("Gasoline" = "Euro_super_95", "Diesel" = "Diesel"),
+        choices = list("Gasoline" = "pb95", "Diesel" = "diesel", "LPG" = "lpg", "Heavy_fuel_oil" = "heavy_fuel_oil", "Heating_gasoil" = "heating_gasoil"),
         selected = ""
       ),
       dateRangeInput(
@@ -65,7 +65,13 @@ server <- function(input, output) {
     tryCatch(
     {
       # Fuel name on a plot
-      fuel <- reactive({ifelse(input$selected_fuel == "Diesel", "Diesel", "Gasoline")})
+      fuel <- reactive({case_when(
+        input$selected_fuel == "Diesel" ~ "Diesel", 
+        input$selected_fuel == "Gasoline" ~ "Gasoline",
+        input$selected_fuel == "LPG", ~ "LPG",
+        input$selected_fuel == "Heating_gasoil" ~ "Heating gasoil",
+        input$selected_fuel == "Heavy_fuel_oil" ~ "Heavy fuel oil"
+        )})
       
       # Rename the selected fuel to plot it and remove observations after selected date_end
       fuel_price_EU_0 <- reactive({fuel_price_EU %>% 
