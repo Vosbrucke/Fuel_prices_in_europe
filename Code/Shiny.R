@@ -1,6 +1,6 @@
 library(shiny)
 library(shinythemes)
-library(plotly)
+# library(plotly)
 library(wesanderson)
 library(ggtext)
 library(tidyverse)
@@ -8,7 +8,7 @@ library(magrittr)
 library(lubridate)
 library(patchwork)
 library(glue)
-# library(ggh4x)
+library(ggh4x)
 library(shinybrowser)
 
 ui <- fluidPage(
