@@ -8,7 +8,7 @@ library(magrittr)
 library(lubridate)
 library(patchwork)
 library(glue)
-library(ggh4x)
+# library(ggh4x)
 library(shinybrowser)
 
 ui <- fluidPage(
@@ -28,7 +28,7 @@ ui <- fluidPage(
       selectInput(
         "selected_fuel", 
         "Select a fuel to plot", 
-        choices = list("Gasoline" = "pb95", "Diesel" = "diesel", "LPG" = "lpg", "Heavy fuel oil" = "heavy_fuel_oil", "Heating gasoil" = "heating_gasoil"),
+        choices = list("Gasoline" = "pb95", "Diesel" = "diesel", "LPG" = "lpg", "Heating gasoil" = "heating_gasoil"),
         selected = ""
       ),
       dateRangeInput(
@@ -66,11 +66,10 @@ server <- function(input, output) {
     {
       # Fuel name on a plot
       fuel <- reactive({case_when(
-        input$selected_fuel == "Diesel" ~ "diesel", 
-        input$selected_fuel == "Gasoline" ~ "gasoline",
-        input$selected_fuel == "LPG", ~ "lpg",
-        input$selected_fuel == "Heating gasoil" ~ "heating_gasoil",
-        input$selected_fuel == "Heavy fuel oil" ~ "heavy_fuel_oil"
+        input$selected_fuel == "diesel" ~ "diesel", 
+        input$selected_fuel == "pb95" ~ "gasoline",
+        input$selected_fuel == "lpg" ~ "lpg",
+        input$selected_fuel == "heating_gasoil" ~ "heating gasoil"
         )})
       
       # Rename the selected fuel to plot it and remove observations after selected date_end
@@ -237,7 +236,8 @@ server <- function(input, output) {
     }, 
     # If there is no country selected display empty plot
     error = function(e) {""})
-  })
+   }
+)
 }
 
 shinyApp(ui, server)
