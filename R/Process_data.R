@@ -22,7 +22,7 @@ suppressWarnings(
 oil_bulletin <- oil_bulletin[!is.na(oil_bulletin[[1]])]
 
 oil_bulletin <- oil_bulletin[,
-lapply(.SD, as.numeric), .SDcols = names(oil_bulletin)
+  lapply(.SD, as.numeric), .SDcols = names(oil_bulletin)
 ]
 
 oil_bulletin_long <- data.table::melt(oil_bulletin, id.vars = "date")
@@ -44,17 +44,16 @@ oil_bulletin_long[,
 
 # adjust the incorrect naming and remove some obsolete values
 oil_bulletin_long[variable == "heing_oil", variable := "heating_oil"]
-oil_bulletin_long[variable == "fuel_oil_1", variable := "fuel_oil"]
 oil_bulletin_long[,
   variable := stringi::stri_replace_all_fixed(variable, "_", " ")
 ]
 oil_bulletin_long <- oil_bulletin_long[
-  !variable %in% c("fuel oil 2", "exchange rate")
+  !variable %in% c("fuel oil 2", "fuel oil 1", "exchange rate")
 ]
 
 # change to price per litre
 oil_bulletin_long <- oil_bulletin_long[
-  variable %in% c("euro95", "diesel", "heating_gasoil", "LPG"),
+  variable %in% c("euro95", "diesel", "heating oil", "LPG"),
   value := round(value / 1000, 2)
 ]
 

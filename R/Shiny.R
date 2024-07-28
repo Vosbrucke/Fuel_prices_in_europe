@@ -21,7 +21,7 @@ ui <- fluidPage(
       selectInput(
         "selected_fuel",
         "Select a fuel to plot",
-        choices = c("Euro 95", "Diesel", "LPG", "Heating Oil", "Fuel Oil"),
+        choices = c("Euro 95", "Diesel", "LPG", "Heating Oil"),
         selected = "Euro 95"
       ),
       dateRangeInput(
@@ -45,7 +45,7 @@ server <- function(input, output) {
   # TODO: #1 get back to wider format for performance gain
   path <- "https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/fix_changed_data_source/Data/oil_bulletin_long.csv"
   oil_bulletin_long <- fread(path)
-
+  oil_bulletin_long[variable == "Heating Oil"]
   palette <- reactive({wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")})
 
   date_start <- reactive({as.Date(input$date[1], origin = "1970-01-01")})
