@@ -32,7 +32,6 @@ jobs:
       - name: Query dependencies
         run: |
           install.packages('remotes')
-          install.packages('sessioninfo')
           install.packages(c("lubridate", "openxlsx", "data.table", "stringi"))
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
@@ -67,7 +66,7 @@ jobs:
         run: |
           options(width = 100)
           pkgs <- installed.packages()[, "Package"]
-          sessioninfo::session_info(pkgs, include_base = TRUE)
+          print(pkgs)
         shell: Rscript {0}
 
 
