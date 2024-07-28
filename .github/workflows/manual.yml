@@ -1,4 +1,6 @@
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: "0 16 * * 1"
 
 jobs:
   generate-data:
