@@ -87,8 +87,8 @@ server <- function(input, output) {
         "Price of", input$selected_fuel, "among",
         "EU Member States on", format(max(react_df()[["date"]]), "%d %B %Y")
       )
-      title <- if (shinybrowser::get_width() > 1500) {
-        gsub("among EU", "among\nEU", title)
+      if (shinybrowser::get_width() > 1500) {
+        title <- gsub("among EU", "among\nEU", title)
       }
 
       ggplot(
