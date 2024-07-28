@@ -58,10 +58,10 @@ server <- function(input, output) {
       oil_bulletin_long_0 <- reactive({oil_bulletin_long[
         variable == input$selected_fuel & date < date_end()
       ]})
-      # oil_bulletin_long_0 <- oil_bulletin_long[variable == input$selected_fuel & date < date_end]
+
       # filter data from the date_start
       react_df <- reactive({oil_bulletin_long_0()[date > date_start()]})
-      # react_df <- oil_bulletin_long_0[date > date_start]
+
       # make a data table to use in correct order as colors on the plot
       countries_letters <- data.table(
         country_name = input$selected_country,
@@ -70,7 +70,6 @@ server <- function(input, output) {
 
       # keep only selected countries with colors assigned
       dt_plot <- data.table(react_df())[countries_letters, on = "country_name"]
-      # dt_plot <- react_df[countries_letters, on = "country_name"]
 
       # the start of y axis
       y_axis <- dt_plot[dt_plot[, .I[1], by = country]$V1, value]
@@ -82,12 +81,6 @@ server <- function(input, output) {
         xend = rep(round_date(as.Date(max(react_df()$date)) + days(155), "year"), 5),
         yend = seq(0.5, 2.5, 0.5)
       )
-      # y_axis_lines <- data.table(
-      #   x = rep(floor_date(as.Date(min(react_df$date)), "year"), 5),
-      #   y = seq(0.5, 2.5, 0.5),
-      #   xend = rep(round_date(as.Date(max(react_df$date)) + days(155), "year"), 5),
-      #   yend = seq(0.5, 2.5, 0.5)
-      # )
 
       # determine if the width of the plot is enough for the whole title
       title <- paste(
@@ -186,6 +179,8 @@ server <- function(input, output) {
         # the end of the year;
         # if the date_end is before 15th January plot until a year before
         scale_x_date(
+          # TODO: #2 what a monstrosity...
+          # simplify and write as a separate object
           limits = c(
             floor_date(
               as.Date(
@@ -194,7 +189,6 @@ server <- function(input, output) {
                 )
               ), "year"
             ),
-            # what a monstrosity... simplify and write as a separate object
             round_date(
               as.Date(
                 max(
