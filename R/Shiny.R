@@ -1,15 +1,8 @@
-library(shiny)
-library(shinythemes)
-# library(plotly)
-library(wesanderson)
-library(ggtext)
-library(tidyverse)
-library(magrittr)
-library(lubridate)
-library(patchwork)
-library(glue)
-library(ggh4x)
-library(shinybrowser)
+libraries <- c(
+  "shiny", "shinythemes", "shinybrowser", "wesanderson",
+  "ggtext", "data.table", "lubridate", "patchwork", "ggh4x"
+)
+lapply(libraries, require, character.only = TRUE)
 
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
@@ -28,8 +21,8 @@ ui <- fluidPage(
       selectInput(
         "selected_fuel", 
         "Select a fuel to plot", 
-        choices = list("Gasoline" = "pb95", "Diesel" = "diesel", "LPG" = "lpg", "Heating gasoil" = "heating_gasoil"),
-        selected = ""
+        choices = c("Euro 95", "Disel", "LPG", "Heating oil", "Fuel oil")
+        selected = "Euro 95"
       ),
       dateRangeInput(
         "date", "Choose date range",
@@ -51,7 +44,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   # Read fuel price data
-  fuel_price_EU <- read_csv("https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Processed_data/fuel_price_EU.csv")
+  fuel_price_EU <- fread("https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Processed_data/fuel_price_EU.csv")
   
   palette <- reactive({wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")})
 
@@ -79,10 +72,7 @@ server <- function(input, output) {
       })
         
       # Filter data from the date_start
-      react_df <- reactive({fuel_price_EU_0() %>% 
-        filter(date > date_start())
-      })
-    
+      react_df <- reactive({fuel_price_EU_0()[date > date_start]})
     
       # Make a tibble to use in correct order as colors on the plot 
       countries_letters <- tibble(
