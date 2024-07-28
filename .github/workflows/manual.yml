@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "0 16 * * 5"
+    - cron: "*/60 * * * *"
 
 jobs:
   generate-data:
@@ -33,7 +33,7 @@ jobs:
         run: |
           install.packages('remotes')
           install.packages('sessioninfo')
-          install.packages(c('tidyverse', 'lubridate', 'openxlsx', 'magrittr', 'stringr'))
+          install.packages(c("lubridate", "openxlsx", "data.table", "stringi"))
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
@@ -52,7 +52,7 @@ jobs:
           
       - name: Generate data
         run: |
-          source("Code/Process_data.R")
+          source("R/Process_data.R")
         shell: Rscript {0} 
         
       - name: Commit files
