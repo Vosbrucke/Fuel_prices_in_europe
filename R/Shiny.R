@@ -43,7 +43,7 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   # TODO: #1 get back to wider format for performance gain
-  path <- "https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/fix_changed_data_source/Data/oil_bulletin_long.csv"
+  path <- "https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Data/oil_bulletin_long.csv"
   oil_bulletin_long <- fread(path)
   oil_bulletin_long[variable == "Heating Oil"]
   palette <- reactive({wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")})
