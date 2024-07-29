@@ -1,8 +1,13 @@
-libraries <- c(
-  "shiny", "shinythemes", "shinybrowser", "wesanderson",
-  "ggtext", "data.table", "lubridate", "patchwork", "ggh4x"
-)
-lapply(libraries, library, character.only = TRUE)
+library("shiny")
+library("shinythemes")
+library("shinybrowser")
+library("wesanderson")
+library("ggtext")
+library("data.table")
+library("ggtext")
+library("lubridate")
+library("patchwork")
+library("ggh4x")
 
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
@@ -14,7 +19,7 @@ ui <- fluidPage(
       selectInput(
         "selected_country",
         "Select a country or countries to plot",
-        choices = c('Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Czechia', 'Germany', 'Great Britain', 'Denmark', 'European Union', 'Euro Zone', 'Estonia', 'Spain', 'Finland', 'France', 'Greece', 'Croatia', 'Hungary', 'Ireland', 'Italy', 'Lithuania', 'Luxembourg', 'Latvia', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Sweden', 'Slovenia', 'Slovakia'),
+        choices = c('Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Czechia', 'Germany', 'United Kingdom', 'Denmark', 'European Union', 'Euro Zone', 'Estonia', 'Spain', 'Finland', 'France', 'Greece', 'Croatia', 'Hungary', 'Ireland', 'Italy', 'Lithuania', 'Luxembourg', 'Latvia', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Sweden', 'Slovenia', 'Slovakia'),
         selected = "Austria",
         multiple = TRUE
       ),
@@ -26,7 +31,7 @@ ui <- fluidPage(
       ),
       dateRangeInput(
         "date", "Choose date range",
-        start = Sys.Date() - years(3),
+        start = Sys.Date() - lubridate::years(3),
         end = Sys.Date(),
         startview = "year",
         weekstart = 1
@@ -44,7 +49,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   # TODO: #1 get back to wider format for performance gain
   path <- "https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Data/oil_bulletin_long.csv"
-  oil_bulletin_long <- fread(path)
+  oil_bulletin_long <- as.data.table(fread(path))
 
   palette <- reactive({wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")})
 
@@ -69,16 +74,20 @@ server <- function(input, output) {
       )
 
       # keep only selected countries with colors assigned
-      dt_plot <- data.table(react_df())[countries_letters, on = "country_name"]
+      dt_plot <- as.data.table(react_df())[countries_letters, on = "country_name"]
 
       # the start of y axis
       y_axis <- dt_plot[dt_plot[, .I[1], by = country]$V1, value]
+      if (any(na_ind <- is.na(y_axis))) {
+        y_axis <- y_axis[!na_ind]
+        dt_plot <- dt_plot[!country_name %in% countries_letters[na_ind][[1]]]
+      }
 
       # add y axis lines that start and end when there are observations in those dates
       y_axis_lines <- data.table(
         x = rep(floor_date(as.Date(min(react_df()$date)), "year"), 5),
         y = seq(0.5, 2.5, 0.5),
-        xend = rep(round_date(as.Date(max(react_df()$date)) + days(155), "year"), 5),
+        xend = rep(round_date(as.Date(max(react_df()$date)) + lubridate::days(155), "year"), 5),
         yend = seq(0.5, 2.5, 0.5)
       )
 
@@ -112,7 +121,7 @@ server <- function(input, output) {
         geom_segment(
           data = data.frame(
             x = as.Date(max(dt_plot$date)), y = y_axis,
-            xend = as.Date(max(dt_plot$date)) + days(60),
+            xend = as.Date(max(dt_plot$date)) + lubridate::days(60),
             yend = y_axis
           ),
           mapping = aes(
@@ -127,7 +136,7 @@ server <- function(input, output) {
         # make a country name label
         geom_text(
           data = data.frame(
-            x = as.Date(max(dt_plot$date)) + days(63),
+            x = as.Date(max(dt_plot$date)) + lubridate::days(63),
             y = y_axis
           ),
           mapping = aes(
@@ -161,14 +170,14 @@ server <- function(input, output) {
           aes(
             x = floor_date(as.Date(min(react_df()$date)), unit = "year"),
             y = 0,
-            xend = round_date(as.Date(max(react_df()$date)) + days(155), "year"),
+            xend = round_date(as.Date(max(react_df()$date)) + lubridate::days(155), "year"),
             yend = 0
           ),
           linewidth = 0.5
         ) +
         # add points for each of the selected counties on the right side
         geom_point(
-          data = dt_plot[1, 1:ncol(dt_plot), by = "color"],
+          data = dt_plot[dt_plot[, .I[1], by = color]$V1, 1:ncol(dt_plot)],
           aes(color = color),
           size = 1,
           shape = 21,
@@ -194,8 +203,8 @@ server <- function(input, output) {
                 max(
                   react_df()$date
                 )
-              ) + days(155), "year"
-            ) + days(
+              ) + lubridate::days(155), "year"
+            ) + lubridate::days(
               round(
                 0.18 * (
                   as.numeric(
@@ -204,7 +213,7 @@ server <- function(input, output) {
                         max(
                           react_df()$date
                         )
-                      ) + days(155), "year"
+                      ) + lubridate::days(155), "year"
                     )
                   ) - as.numeric(
                     floor_date(
@@ -222,13 +231,13 @@ server <- function(input, output) {
           expand = c(0, 0),
           breaks = seq.Date(
             floor_date(as.Date(min(react_df()$date)), "year"),
-            round_date(as.Date(max(react_df()$date)) + days(155), "year"),
+            round_date(as.Date(max(react_df()$date)) + lubridate::days(155), "year"),
             "1 year"
           ),
           date_labels = "%Y",
           minor_breaks = seq.Date(
             floor_date(as.Date(min(react_df()$date)), "year"),
-            round_date(as.Date(max(react_df()$date)) + days(155), "year"),
+            round_date(as.Date(max(react_df()$date)) + lubridate::days(155), "year"),
             by = "quarter"
           ),
           guide = "axis_minor"
