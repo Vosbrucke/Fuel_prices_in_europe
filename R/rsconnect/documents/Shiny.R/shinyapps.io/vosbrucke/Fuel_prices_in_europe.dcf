@@ -5,7 +5,7 @@ account: vosbrucke
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8036017
-bundleId: 8917036
+bundleId: 8921196
 url: https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/
 asMultiple: FALSE
 asStatic: FALSE

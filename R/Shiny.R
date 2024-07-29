@@ -2,7 +2,7 @@ libraries <- c(
   "shiny", "shinythemes", "shinybrowser", "wesanderson",
   "ggtext", "data.table", "lubridate", "patchwork", "ggh4x"
 )
-lapply(libraries, require, character.only = TRUE)
+lapply(libraries, library, character.only = TRUE)
 
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
