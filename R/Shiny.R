@@ -154,11 +154,12 @@ server <- function(input, output) {
                             '<b>' + item.seriesName + ':</b> ' + groupValueFormatted + '<br/>';
         }
       });
+
       return tooltipContent;
     }"
     )
 
-  react_df() |>
+    chart <- react_df() |>
     group_by(country) |>
     e_charts(
       x = date
@@ -215,6 +216,19 @@ server <- function(input, output) {
         fontWeight = "bold"
       )
     ) |>
+      e_text_g(
+        left = 55,
+        bottom = 30,
+        style = list(
+          text = caption_title,
+          fontSize = 5,
+          color = "#888888",
+          textAlign = "left"
+        )
+      )
+
+    if (any(!grepl("Othrs", selected_countries_vector))) {
+      chart <- chart |>
     e_legend(
       top = "4%",
       left = "center",
@@ -225,17 +239,12 @@ server <- function(input, output) {
       itemWidth = 15,
       itemHeight = 7.5,
       padding = c(5, 10)
-    ) |>
-    e_text_g(
-      left = 55,
-      bottom = 30,
-      style = list(
-        text = caption_title,
-        fontSize = 5,
-        color = "#888888",
-        textAlign = "left"
-      )
-    )
+        )
+    } else {
+      chart <- chart |>
+        e_legend(show = FALSE)
+    }
+    chart
   })
 }
 
