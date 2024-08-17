@@ -127,19 +127,30 @@ server <- function(input, output) {
       var locale = 'en-US';  // Set your desired locale
       var options = { style: 'currency', currency: 'EUR', minimumFractionDigits: 1 };
 
+        // Extract values and sort them in descending order
+        var items = params.map(function(item) {
+          return {
+            seriesName: item.seriesName,
+            value: item.data.value[item.encode.y[0]],
+            color: item.color
+          };
+        });
+        
+        items.sort(function(a, b) {
+          return b.value - a.value;  // Sort in descending order
+        });
+
       // Use a Set to store unique series names
       var uniqueItems = new Set();
 
-      params.forEach(function(item) {
+        items.forEach(function(item) {
         var fmt = new Intl.NumberFormat(locale, options);
-        var groupValue = item.data.value[item.encode.y[0]];
-        var groupColor = item.color;
-        var groupValueFormatted = fmt.format(groupValue);
+          var groupValueFormatted = fmt.format(item.value);
         
         // Check if the series name is already in the Set
         if (!uniqueItems.has(item.seriesName) && item.color !== '#d3d3d3') {
           uniqueItems.add(item.seriesName);  // Add to the Set if not present
-          tooltipContent += '<div style=\"display: inline-block; width: 10px; height: 10px; margin-right: 5px; background-color: ' + groupColor + '\"></div>' +
+            tooltipContent += '<div style=\"display: inline-block; width: 10px; height: 10px; margin-right: 5px; background-color: ' + item.color + '\"></div>' +
                             '<b>' + item.seriesName + ':</b> ' + groupValueFormatted + '<br/>';
         }
       });
