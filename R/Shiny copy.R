@@ -8,7 +8,7 @@ library("ggtext")
 library("lubridate")
 library("patchwork")
 library("ggh4x")
-
+library("echarts4r")
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
   theme = shinytheme("cosmo"),
@@ -55,22 +55,27 @@ server <- function(input, output) {
 
   date_start <- reactive({as.Date(input$date[1], origin = "1970-01-01")})
   date_end <- reactive({as.Date(input$date[2], origin = "1970-01-01")})
-  output$debug_data <- renderPrint({
-  cat("react_df:", "\n")
-  print(react_df())
-  cat("dt_plot:", "\n")
-  print(dt_plot)
-})
-  output$fuel_prices <- renderPlot({
+
+  output$fuel_prices <- renderEcharts4r({
     tryCatch({
+      input <- list()
+      input$selected_country <- c("Austria", "Germany")
+      palette <- wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")
+      # input$selected_country <- c("Other", input$selected_country)
+      # palette <- c("#d3d3d3", palette)
+      input$selected_fuel <- "Diesel"
+      date_start <- as.Date("2021-01-01")
+      date_end <- as.Date("2024-01-01")
 
       # remove observations after selected date_end
-      oil_bulletin_long_0 <- reactive({oil_bulletin_long[
-        variable == input$selected_fuel & date < date_end()
-      ]})
+      oil_bulletin_long_0 <- oil_bulletin_long[
+        variable == input$selected_fuel & date < date_end
+      ]
 
       # filter data from the date_start
-      react_df <- reactive({oil_bulletin_long_0()[date > date_start()]})
+      react_df <- oil_bulletin_long_0[date > date_start][,
+        country_name := fifelse(country_name %in% input$selected_country, country_name, "Other")
+      ]
 
       # make a data table to use in correct order as colors on the plot
       countries_letters <- data.table(
@@ -79,10 +84,11 @@ server <- function(input, output) {
       )
 
       # keep only selected countries with colors assigned
-      dt_plot <- as.data.table(react_df())[countries_letters, on = "country_name"]
+      dt_plot <- react_df[countries_letters, on = "country_name"][!is.na(value)]
+      dt_plot[, country_name := factor(country_name, levels = input$selected_country)]
 
       # the start of y axis
-      y_axis <- dt_plot[dt_plot[, .I[1], by = country]$V1, value]
+      y_axis <- dt_plot[dt_plot[, .I[1], by = country_name]$V1, value]
       if (any(na_ind <- is.na(y_axis))) {
         y_axis <- y_axis[!na_ind]
         dt_plot <- dt_plot[!country_name %in% countries_letters[na_ind][[1]]]
@@ -90,20 +96,141 @@ server <- function(input, output) {
 
       # add y axis lines that start and end when there are observations in those dates
       y_axis_lines <- data.table(
-        x = rep(floor_date(as.Date(min(react_df()$date)), "year"), 5),
+        x = rep(floor_date(as.Date(min(react_df$date)), "year"), 5),
         y = seq(0.5, 2.5, 0.5),
-        xend = rep(round_date(as.Date(max(react_df()$date)) + lubridate::days(155), "year"), 5),
+        xend = rep(round_date(as.Date(max(react_df$date)) + lubridate::days(155), "year"), 5),
         yend = seq(0.5, 2.5, 0.5)
       )
+
+      points <- dt_plot |>
+          dplyr::filter(!country_name %in% c("Other")) |>
+          group_by(country_name) |>
+          dplyr::filter(date == max(date))
 
       # determine if the width of the plot is enough for the whole title
       title <- paste(
         "Price of", input$selected_fuel, "among",
-        "EU Member States on", format(max(react_df()[["date"]]), "%d %B %Y")
+        "EU Member States on", format(max(react_df[["date"]]), "%d %B %Y")
       )
       if (shinybrowser::get_width() > 1500) {
         title <- gsub("among EU", "among\nEU", title)
       }
+
+      formatter <- htmlwidgets::JS(
+        "
+        function(params) {
+            var tooltipContent = '<b>Date:</b> ' + params[0].axisValue + '<br/>';
+        
+            params.forEach(function(item) {
+              var groupName = item.seriesName;
+              var fmt = new Intl.NumberFormat('%s', %s);
+              var groupValue = item.value[item.encode.y[0]];
+              var groupColor = item.color;
+              var groupValueFormatted = fmt.format(item)
+              
+              tooltipContent += '<div style=\"display: inline-block; width: 10px; height: 10px; margin-right: 5px; background-color: ' + groupColor + '\"></div>' +
+                                '<b>' + groupName + ':</b> ' + groupValueFormatted + '<br/>';
+            });
+            
+            return tooltipContent;
+          console.log(params);
+          }
+        "
+      )
+      formatter <- htmlwidgets::JS(
+              "function(params){
+                var tp = [];
+                params.forEach(function(x){
+                  tp.push([x.seriesName, x.value].join('-'))
+                });
+                return(tp.join('<br/>'))
+              }")
+
+  formatter <- function (style = c("decimal", "percent", "currency"), digits = 0, 
+    locale = NULL, currency = "USD") {
+    if (rstudioapi::isAvailable()) {
+        warning("`e_axis_formatter` breaks the plot in RStudio, open it in your browser.", 
+            call. = FALSE)
+    }
+    if (is.null(locale)) {
+        locale <- echarts4r:::.get_locale()
+    }
+    style <- match.arg(style)
+    opts <- list(style = style, minimumFractionDigits = digits, 
+        maximumFractionDigits = digits, currency = currency)
+    htmlwidgets::JS(sprintf("function(value, 2) {\n        var fmt = new Intl.NumberFormat('%s', %s);\n        return fmt.format(value);\n    }", 
+        locale, jsonlite::toJSON(opts, auto_unbox = TRUE)))
+  }
+
+    htmlwidgets::JS(
+      sprintf("function(value, 1) {\n        var fmt = new Intl.NumberFormat('%s', %s);\n        return fmt.format(value);\n    }",
+      locale,
+      jsonlite::toJSON(opts, auto_unbox = TRUE)
+      )
+    )
+      
+      # dcast(dt_plot, date ~ country, value.var = "value") |>
+      react_df |>
+      group_by(country) |>
+      e_charts(
+        x = date
+      ) |>
+      e_line(
+        serie = value,
+        legend = list(show = FALSE),
+        lineStyle = list(
+          width = 0.5
+        ),
+        color = "#d3d3d3",
+        symbol = "none"
+      ) |>
+      e_data(
+        data = dt_plot |>
+          dplyr::filter(!country_name %in% c("Other")) |>
+          group_by(country_name)
+      ) |>
+      e_line(
+        serie = value,
+        # symbol = 'circle',
+        symbolSize = 2
+      ) |>
+      e_data(
+        data = dt_plot |>
+          dplyr::filter(!country_name %in% c("Other")) |>
+          group_by(country_name) |>
+          dplyr::filter(date == max(date))
+      ) |>
+      e_line(
+        serie = value,
+        symbolSize = 5
+      ) |>
+      e_color(
+        color = palette
+      ) |>
+      e_tooltip(formatter = htmlwidgets::JS("
+    function(params) {
+      var value = params.value[1];
+      return params.seriesName + ': $' + value.toFixed(2);
+    }
+  ")) |>
+  e_y_axis(formatter = htmlwidgets::JS("
+    function(value) {
+      return '$' + value;
+    }
+  "))
+      e_tooltip(formatter = formatter(style = "currency", currency = "USD")) |>
+      # e_y_axis(
+      #   formatter = e_axis_formatter("currency", currency = "EUR", digits = 1)
+      # ) |>
+      # e_tooltip(
+      #   trigger = "axis",
+      #   # formatter = formatter
+      #   # formatter = formatter("currency", currency = "EUR", digits = 1)
+      #   formatter = e_tooltip_item_formatter("currency", currency = "EUR", digits = 0)
+      # ) 
+      e_x_axis(axisLabel = list(formatter = htmlwidgets::JS("function(value) { return value; }"))) |> # no formatter for x-axis
+      e_y_axis(axisLabel = list(formatter = formatter(style = "currency", currency = "USD"))) # formatter for y-axis
+
 
       plot <- ggplot(
         data = oil_bulletin_long_0(),
@@ -280,7 +407,7 @@ server <- function(input, output) {
         )
       plot(plot)
 
-
+      
     },
     # if no country selected display empty plot
     error = function(e) ""
