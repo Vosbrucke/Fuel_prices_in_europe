@@ -10,6 +10,7 @@ library("patchwork")
 library("ggh4x")
 library("echarts4r")
 library("htmlwidgets")
+library("webshot2")
 ui <- fluidPage(
   tags$head(tags$style(".well {background-color: #FFFFFF; border-color: #FFFFFF}")),
   theme = shinytheme("cosmo"),
@@ -44,7 +45,8 @@ ui <- fluidPage(
         startview = "year",
         weekstart = 1
       ),
-      tags$style(HTML(".datepicker {z-index:99999 !important;}"))
+      tags$style(HTML(".datepicker {z-index:99999 !important;}")),
+      downloadButton("download_plot", "Download Graph")
     ),
     mainPanel(
       echarts4rOutput("chart")
@@ -183,6 +185,7 @@ server <- function(input, output) {
       trigger = "axis",
       formatter = formatter
     ) |>
+    e_toolbox_feature(feature = "saveAsImage") |>
     e_color(
       color = palette()
     ) |>
@@ -224,6 +227,19 @@ server <- function(input, output) {
       )
     )
   })
+
+  # # download handler for the graph
+  # output$download_plot <- downloadHandler(
+  #   filename = paste0("Fuel_prices_in_", Sys.Date(), ".png"),
+  #   content = function(file) {
+  #     # save the chart to an HTML file
+  #     temp_html <- tempfile(fileext = ".html")
+  #     saveWidget(as_widget(output$chart), file = temp_html, selfcontained = TRUE)
+
+  #     # convert HTML to PNG using webshot2
+  #     webshot2::webshot(temp_html, file = file, selector = "#chart")
+  #   }
+  # )
 }
 
 shinyApp(ui, server)
