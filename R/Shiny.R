@@ -21,12 +21,12 @@ ui <- fluidPage(
         "selected_country",
         "Select country/zone or more to plot",
         choices = c(
-          'Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Czechia',
-          'Germany', 'United Kingdom', 'Denmark', 'European Union',
-          'Euro Zone', 'Estonia', 'Spain', 'Finland', 'France',
-          'Greece', 'Croatia', 'Hungary', 'Ireland', 'Italy',
-          'Lithuania', 'Luxembourg', 'Latvia', 'Malta', 'Netherlands',
-          'Poland', 'Portugal', 'Romania', 'Sweden', 'Slovenia', 'Slovakia'
+          "Austria", "Belgium", "Bulgaria", "Cyprus", "Czechia",
+          "Germany", "United Kingdom", "Denmark", "European Union",
+          "Euro Zone", "Estonia", "Spain", "Finland", "France",
+          "Greece", "Croatia", "Hungary", "Ireland", "Italy",
+          "Lithuania", "Luxembourg", "Latvia", "Malta", "Netherlands",
+          "Poland", "Portugal", "Romania", "Sweden", "Slovenia", "Slovakia"
         ),
         selected = "Austria",
         multiple = TRUE
@@ -57,40 +57,51 @@ server <- function(input, output) {
   path <- "https://raw.githubusercontent.com/Vosbrucke/Fuel_prices_in_europe/main/Data/oil_bulletin_long.csv"
   oil_bulletin_long <- as.data.table(fread(path))
 
-  palette <- reactive({wes_palette("Darjeeling1", n = length(input$selected_country), type = "continuous")})
+  palette <- reactive({
+    wes_palette(
+      "Darjeeling1",
+      n = length(input$selected_country), type = "continuous"
+    )
+  })
 
   date_start <- reactive({as.Date(input$date[1], origin = "1970-01-01")})
   date_end <- reactive({as.Date(input$date[2], origin = "1970-01-01")})
-  
+
   selected_fuel <- reactive({input$selected_fuel})
-  
+
   # remove observations after selected date_end
   oil_bulletin_long_0 <- reactive({oil_bulletin_long[
     variable == selected_fuel() & date < date_end()
   ]})
 
-  selected_country <- reactive({if (length(input$selected_country) == 0) "Others" else input$selected_country})
+  selected_country <- reactive({
+    if (length(input$selected_country) == 0) "Othrs" else input$selected_country
+  })
   
   # filter data from the date_start and rename non selected countries to 'Other'
   react_df <- reactive({oil_bulletin_long_0()[date > date_start()][,
-    country_name := fifelse(country_name %in% selected_country(), country_name, "Other")
+    country_name := fifelse(
+      country_name %in% selected_country(), country_name, "Other"
+    )
   ]})
 
   output$chart <- renderEcharts4r({
 
     # ensure `selected_country()` is a vector
     selected_countries_vector <- unlist(selected_country())
-    
+
     # data table for plotting with color assignments
     countries_letters <- data.table(
       country_name = selected_countries_vector,
       color = letters[seq_along(selected_countries_vector)]
     )
-    
+
     # join the filtered data with the countries_letters table
     dt_plot <- react_df()[countries_letters, on = "country_name", nomatch = 0L]
-    dt_plot[, country_name := factor(country_name, levels = selected_countries_vector)]
-    
+    dt_plot[,
+      country_name := factor(country_name, levels = selected_countries_vector)
+    ]
+
     # the start of y axis dot point
     y_axis <- dt_plot[dt_plot[, .I[1], by = country_name]$V1, value]
     if (any(na_ind <- is.na(y_axis))) {
@@ -134,7 +145,7 @@ server <- function(input, output) {
       return tooltipContent;
     }"
     )
-    
+
   react_df() |>
     group_by(country) |>
     e_charts(
@@ -176,41 +187,42 @@ server <- function(input, output) {
       color = palette()
     ) |>
     # return y axis value with EUR symbol and 1 decimal point
-    e_y_axis(formatter = htmlwidgets::JS("
-      function(value) {
-        return '€' + value.toFixed(1);
-      }
-    ")
-   ) |>
-  e_title(
-    text = main_title,
-    left = "center",
-    textStyle = list(
-      fontSize = 12,
-      fontWeight = "bold"
+    e_y_axis(
+      formatter = htmlwidgets::JS(
+        "function(value) {
+          return '€' + value.toFixed(1);
+        }"
+      )
+    ) |>
+    e_title(
+      text = main_title,
+      left = "center",
+      textStyle = list(
+        fontSize = 12,
+        fontWeight = "bold"
+      )
+    ) |>
+    e_legend(
+      top = "4%",
+      left = "center",
+      orient = "horizontal",
+      textStyle = list(
+        fontSize = 10
+      ),
+      itemWidth = 15,
+      itemHeight = 7.5,
+      padding = c(5, 10)
+    ) |>
+    e_text_g(
+      left = 55,
+      bottom = 30,
+      style = list(
+        text = caption_title,
+        fontSize = 5,
+        color = "#888888",
+        textAlign = "left"
+      )
     )
-  ) |>
-  e_legend(
-    top = "4%",
-    left = "center",
-    orient = "horizontal",
-    textStyle = list(
-      fontSize = 10
-    ),
-    itemWidth = 15,
-    itemHeight = 7.5,
-    padding = c(5, 10)
-  ) |>
-  e_text_g(
-    left = 55,
-    bottom = 30,
-    style = list(
-      text = caption_title,
-      fontSize = 5,
-      color = "#888888",
-      textAlign = "left"
-    )
-  )
   })
 }
 
