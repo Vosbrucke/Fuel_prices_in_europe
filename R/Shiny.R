@@ -123,9 +123,9 @@ server <- function(input, output) {
 
     formatter <- htmlwidgets::JS(
       "function(params) {
-      var tooltipContent = '<b>Date:</b> ' + params[0].axisValueLabel + '<br/>';
-      var locale = 'en-US';  // Set your desired locale
-      var options = { style: 'currency', currency: 'EUR', minimumFractionDigits: 1 };
+        var tooltipContent = '<b>Date:</b> ' + params[0].axisValueLabel + '<br/>';
+        var locale = 'en-US';  // Set your desired locale
+        var options = { style: 'currency', currency: 'EUR', minimumFractionDigits: 1 };
 
         // Extract values and sort them in descending order
         var items = params.map(function(item) {
@@ -140,82 +140,82 @@ server <- function(input, output) {
           return b.value - a.value;  // Sort in descending order
         });
 
-      // Use a Set to store unique series names
-      var uniqueItems = new Set();
+        // Use a Set to store unique series names
+        var uniqueItems = new Set();
 
         items.forEach(function(item) {
-        var fmt = new Intl.NumberFormat(locale, options);
+          var fmt = new Intl.NumberFormat(locale, options);
           var groupValueFormatted = fmt.format(item.value);
-        
-        // Check if the series name is already in the Set
-        if (!uniqueItems.has(item.seriesName) && item.color !== '#d3d3d3') {
-          uniqueItems.add(item.seriesName);  // Add to the Set if not present
-            tooltipContent += '<div style=\"display: inline-block; width: 10px; height: 10px; margin-right: 5px; background-color: ' + item.color + '\"></div>' +
-                            '<b>' + item.seriesName + ':</b> ' + groupValueFormatted + '<br/>';
-        }
-      });
 
-      return tooltipContent;
-    }"
+          // Check if the series name is already in the Set
+          if (!uniqueItems.has(item.seriesName) && item.color !== '#d3d3d3') {
+            uniqueItems.add(item.seriesName);  // Add to the Set if not present
+            tooltipContent += '<div style=\"display: inline-block; width: 10px; height: 10px; margin-right: 5px; background-color: ' + item.color + '\"></div>' +
+                              '<b>' + item.seriesName + ':</b> ' + groupValueFormatted + '<br/>';
+          }
+        });
+
+        return tooltipContent;
+      }"
     )
 
     chart <- react_df() |>
-    group_by(country) |>
-    e_charts(
-      x = date
-    ) |>
-    e_line(
-      serie = value,
-      legend = list(show = FALSE),
-      lineStyle = list(
-        width = 0.5
-      ),
-      color = "#d3d3d3",
-      symbol = "none"
-    ) |>
-    e_data(
-      data = dt_plot |>
-        dplyr::filter(!country_name %in% c("Other")) |>
-        group_by(country_name)
-    ) |>
-    e_line(
-      serie = value,
-      symbolSize = 2
-    ) |>
-    e_data(
-      data = dt_plot |>
-        dplyr::filter(!country_name %in% c("Other")) |>
-        group_by(country_name) |>
-        dplyr::filter(date == max(date))
-    ) |>
-    e_line(
-      serie = value,
-      symbolSize = 6
-    ) |>
-    e_tooltip(
-      trigger = "axis",
-      formatter = formatter
-    ) |>
-    e_toolbox_feature(feature = "saveAsImage") |>
-    e_color(
-      color = palette()
-    ) |>
-    # return y axis value with EUR symbol and 1 decimal point
-    e_y_axis(
-      formatter = htmlwidgets::JS(
-        "function(value) {
-          return '€' + value.toFixed(1);
-        }"
-      )
-    ) |>
-    e_title(
-      text = main_title,
-      left = "center",
-      textStyle = list(
-        fontSize = 12,
-        fontWeight = "bold"
-      )
-    ) |>
+      group_by(country) |>
+      e_charts(
+        x = date
+      ) |>
+      e_line(
+        serie = value,
+        legend = list(show = FALSE),
+        lineStyle = list(
+          width = 0.5
+        ),
+        color = "#d3d3d3",
+        symbol = "none"
+      ) |>
+      e_data(
+        data = dt_plot |>
+          dplyr::filter(!country_name %in% c("Other")) |>
+          group_by(country_name)
+      ) |>
+      e_line(
+        serie = value,
+        symbolSize = 2
+      ) |>
+      e_data(
+        data = dt_plot |>
+          dplyr::filter(!country_name %in% c("Other")) |>
+          group_by(country_name) |>
+          dplyr::filter(date == max(date))
+      ) |>
+      e_line(
+        serie = value,
+        symbolSize = 6
+      ) |>
+      e_tooltip(
+        trigger = "axis",
+        formatter = formatter
+      ) |>
+      e_toolbox_feature(feature = "saveAsImage") |>
+      e_color(
+        color = palette()
+      ) |>
+      # return y axis value with EUR symbol and 1 decimal point
+      e_y_axis(
+        formatter = htmlwidgets::JS(
+          "function(value) {
+            return '€' + value.toFixed(1);
+          }"
+        )
+      ) |>
+      e_title(
+        text = main_title,
+        left = "center",
+        textStyle = list(
+          fontSize = 12,
+          fontWeight = "bold"
+        )
+      ) |>
       e_text_g(
         left = 55,
         bottom = 30,
@@ -229,16 +229,16 @@ server <- function(input, output) {
 
     if (any(!grepl("Othrs", selected_countries_vector))) {
       chart <- chart |>
-    e_legend(
-      top = "4%",
-      left = "center",
-      orient = "horizontal",
-      textStyle = list(
-        fontSize = 10
-      ),
-      itemWidth = 15,
-      itemHeight = 7.5,
-      padding = c(5, 10)
+        e_legend(
+          top = "4%",
+          left = "center",
+          orient = "horizontal",
+          textStyle = list(
+            fontSize = 10
+          ),
+          itemWidth = 15,
+          itemHeight = 7.5,
+          padding = c(5, 10)
         )
     } else {
       chart <- chart |>
