@@ -1,9 +1,7 @@
 # Fuel prices in European countries / zones
-Welcome to the project where we explore the prices of different fuel types in European countries / zones.
+Welcome to the project where we explore the prices of different fuel types in European countries / zones. You can interact and display your own selection of different inputs following the link of the deployed app [here](https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/). Have fun and if you find the app useful feel free to leave a star to the repo :)
 
-Find the deployed app [here](https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/).
-
-An example of what you can expect from the app :)
+### An example output:
 ![app](https://github.com/Vosbrucke/Fuel_prices_in_europe/blob/main/Price%20of%20Euro%2095%20in%20Europe%20until%2005%20August%202024.jpeg "Fuel prices example")
 
 It was quite a shock we experienced in 2022 wasn't it!? The Russian attack on Ukraine had major repercussions, which were felt universally across all countries in the chart. Or were they?? What's the deal with Malta!? Indeed an interesting case! In 2013, Malta's government introduced a policy under which state-owned fuel company secures long term fuel supply agreements. The policy seems to pay off a lot although it was heavily [criticized](https://timesofmalta.com/article/Fuel-price-stability-a-myth.556585) at the beginning. Time has shown though that it achieved it's primary goal- ensuring price stability. Pretty cool to see a well-implemented policy amid concerns having (with hindsight) such positive outcome!
