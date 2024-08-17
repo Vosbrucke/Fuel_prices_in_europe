@@ -45,8 +45,7 @@ ui <- fluidPage(
         startview = "year",
         weekstart = 1
       ),
-      tags$style(HTML(".datepicker {z-index:99999 !important;}")),
-      downloadButton("download_plot", "Download Graph")
+      tags$style(HTML(".datepicker {z-index:99999 !important;}"))
     ),
     mainPanel(
       echarts4rOutput("chart")
@@ -227,19 +226,6 @@ server <- function(input, output) {
       )
     )
   })
-
-  # # download handler for the graph
-  # output$download_plot <- downloadHandler(
-  #   filename = paste0("Fuel_prices_in_", Sys.Date(), ".png"),
-  #   content = function(file) {
-  #     # save the chart to an HTML file
-  #     temp_html <- tempfile(fileext = ".html")
-  #     saveWidget(as_widget(output$chart), file = temp_html, selfcontained = TRUE)
-
-  #     # convert HTML to PNG using webshot2
-  #     webshot2::webshot(temp_html, file = file, selector = "#chart")
-  #   }
-  # )
 }
 
 shinyApp(ui, server)
