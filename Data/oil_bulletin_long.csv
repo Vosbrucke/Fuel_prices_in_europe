@@ -1,4 +1,5 @@
 country,country_name,date,variable,value
+EU,European Union,2024-11-18,Euro 95,1.64
 EU,European Union,2024-11-11,Euro 95,1.64
 EU,European Union,2024-11-04,Euro 95,1.63
 EU,European Union,2024-10-28,Euro 95,1.64
@@ -987,6 +988,7 @@ EU,European Union,2005-01-24,Euro 95,1.05
 EU,European Union,2005-01-17,Euro 95,1.04
 EU,European Union,2005-01-10,Euro 95,1.04
 EU,European Union,2005-01-03,Euro 95,1.04
+EU,European Union,2024-11-18,Diesel,1.55
 EU,European Union,2024-11-11,Diesel,1.54
 EU,European Union,2024-11-04,Diesel,1.53
 EU,European Union,2024-10-28,Diesel,1.53
@@ -1975,6 +1977,7 @@ EU,European Union,2005-01-24,Diesel,0.93
 EU,European Union,2005-01-17,Diesel,0.93
 EU,European Union,2005-01-10,Diesel,0.93
 EU,European Union,2005-01-03,Diesel,0.94
+EU,European Union,2024-11-18,Heating Oil,1.06
 EU,European Union,2024-11-11,Heating Oil,1.06
 EU,European Union,2024-11-04,Heating Oil,1.04
 EU,European Union,2024-10-28,Heating Oil,1.06
@@ -2963,6 +2966,7 @@ EU,European Union,2005-01-24,Heating Oil,0.49
 EU,European Union,2005-01-17,Heating Oil,0.49
 EU,European Union,2005-01-10,Heating Oil,0.48
 EU,European Union,2005-01-03,Heating Oil,0.49
+EU,European Union,2024-11-18,LPG,0.75
 EU,European Union,2024-11-11,LPG,0.74
 EU,European Union,2024-11-04,LPG,0.74
 EU,European Union,2024-10-28,LPG,0.74
@@ -3951,6 +3955,7 @@ EU,European Union,2005-01-24,LPG,0.49
 EU,European Union,2005-01-17,LPG,0.49
 EU,European Union,2005-01-10,LPG,0.5
 EU,European Union,2005-01-03,LPG,0.5
+EUR,Euro Zone,2024-11-18,Euro 95,1.69
 EUR,Euro Zone,2024-11-11,Euro 95,1.68
 EUR,Euro Zone,2024-11-04,Euro 95,1.68
 EUR,Euro Zone,2024-10-28,Euro 95,1.7
@@ -4939,6 +4944,7 @@ EUR,Euro Zone,2005-01-24,Euro 95,1.04
 EUR,Euro Zone,2005-01-17,Euro 95,1.05
 EUR,Euro Zone,2005-01-10,Euro 95,1.03
 EUR,Euro Zone,2005-01-03,Euro 95,1.04
+EUR,Euro Zone,2024-11-18,Diesel,1.57
 EUR,Euro Zone,2024-11-11,Diesel,1.56
 EUR,Euro Zone,2024-11-04,Diesel,1.55
 EUR,Euro Zone,2024-10-28,Diesel,1.55
@@ -5927,6 +5933,7 @@ EUR,Euro Zone,2005-01-24,Diesel,0.91
 EUR,Euro Zone,2005-01-17,Diesel,0.91
 EUR,Euro Zone,2005-01-10,Diesel,0.91
 EUR,Euro Zone,2005-01-03,Diesel,0.91
+EUR,Euro Zone,2024-11-18,Heating Oil,1.05
 EUR,Euro Zone,2024-11-11,Heating Oil,1.05
 EUR,Euro Zone,2024-11-04,Heating Oil,1.03
 EUR,Euro Zone,2024-10-28,Heating Oil,1.05
@@ -6915,6 +6922,7 @@ EUR,Euro Zone,2005-01-24,Heating Oil,0.48
 EUR,Euro Zone,2005-01-17,Heating Oil,0.47
 EUR,Euro Zone,2005-01-10,Heating Oil,0.47
 EUR,Euro Zone,2005-01-03,Heating Oil,0.47
+EUR,Euro Zone,2024-11-18,LPG,0.79
 EUR,Euro Zone,2024-11-11,LPG,0.79
 EUR,Euro Zone,2024-11-04,LPG,0.78
 EUR,Euro Zone,2024-10-28,LPG,0.78
@@ -7903,6 +7911,7 @@ EUR,Euro Zone,2005-01-24,LPG,0.53
 EUR,Euro Zone,2005-01-17,LPG,0.53
 EUR,Euro Zone,2005-01-10,LPG,0.53
 EUR,Euro Zone,2005-01-03,LPG,0.54
+AT,Austria,2024-11-18,Euro 95,1.5
 AT,Austria,2024-11-11,Euro 95,1.49
 AT,Austria,2024-11-04,Euro 95,1.48
 AT,Austria,2024-10-28,Euro 95,1.5
@@ -8891,6 +8900,7 @@ AT,Austria,2005-01-24,Euro 95,0.92
 AT,Austria,2005-01-17,Euro 95,0.91
 AT,Austria,2005-01-10,Euro 95,0.91
 AT,Austria,2005-01-03,Euro 95,0.92
+AT,Austria,2024-11-18,Diesel,1.54
 AT,Austria,2024-11-11,Diesel,1.52
 AT,Austria,2024-11-04,Diesel,1.5
 AT,Austria,2024-10-28,Diesel,1.51
@@ -9879,6 +9889,7 @@ AT,Austria,2005-01-24,Diesel,0.84
 AT,Austria,2005-01-17,Diesel,0.84
 AT,Austria,2005-01-10,Diesel,0.85
 AT,Austria,2005-01-03,Diesel,0.86
+AT,Austria,2024-11-18,Heating Oil,1.08
 AT,Austria,2024-11-11,Heating Oil,1.08
 AT,Austria,2024-11-04,Heating Oil,1.08
 AT,Austria,2024-10-28,Heating Oil,1.08
@@ -10867,6 +10878,7 @@ AT,Austria,2005-01-24,Heating Oil,0.5
 AT,Austria,2005-01-17,Heating Oil,0.49
 AT,Austria,2005-01-10,Heating Oil,0.48
 AT,Austria,2005-01-03,Heating Oil,0.5
+AT,Austria,2024-11-18,LPG,
 AT,Austria,2024-11-11,LPG,
 AT,Austria,2024-11-04,LPG,
 AT,Austria,2024-10-28,LPG,
@@ -11855,6 +11867,7 @@ AT,Austria,2005-01-24,LPG,
 AT,Austria,2005-01-17,LPG,
 AT,Austria,2005-01-10,LPG,
 AT,Austria,2005-01-03,LPG,
+BE,Belgium,2024-11-18,Euro 95,1.55
 BE,Belgium,2024-11-11,Euro 95,1.54
 BE,Belgium,2024-11-04,Euro 95,1.56
 BE,Belgium,2024-10-28,Euro 95,1.58
@@ -12843,6 +12856,7 @@ BE,Belgium,2005-01-24,Euro 95,1.09
 BE,Belgium,2005-01-17,Euro 95,1.07
 BE,Belgium,2005-01-10,Euro 95,1.01
 BE,Belgium,2005-01-03,Euro 95,1.05
+BE,Belgium,2024-11-18,Diesel,1.65
 BE,Belgium,2024-11-11,Diesel,1.65
 BE,Belgium,2024-11-04,Diesel,1.65
 BE,Belgium,2024-10-28,Diesel,1.62
@@ -13831,6 +13845,7 @@ BE,Belgium,2005-01-24,Diesel,0.86
 BE,Belgium,2005-01-17,Diesel,0.85
 BE,Belgium,2005-01-10,Diesel,0.85
 BE,Belgium,2005-01-03,Diesel,0.89
+BE,Belgium,2024-11-18,Heating Oil,0.82
 BE,Belgium,2024-11-11,Heating Oil,0.82
 BE,Belgium,2024-11-04,Heating Oil,0.8
 BE,Belgium,2024-10-28,Heating Oil,0.81
@@ -14819,6 +14834,7 @@ BE,Belgium,2005-01-24,Heating Oil,0.39
 BE,Belgium,2005-01-17,Heating Oil,0.37
 BE,Belgium,2005-01-10,Heating Oil,0.37
 BE,Belgium,2005-01-03,Heating Oil,0.38
+BE,Belgium,2024-11-18,LPG,0.9
 BE,Belgium,2024-11-11,LPG,0.9
 BE,Belgium,2024-11-04,LPG,0.87
 BE,Belgium,2024-10-28,LPG,0.87
@@ -15807,6 +15823,7 @@ BE,Belgium,2005-01-24,LPG,0.39
 BE,Belgium,2005-01-17,LPG,0.39
 BE,Belgium,2005-01-10,LPG,0.39
 BE,Belgium,2005-01-03,LPG,0.4
+BG,Bulgaria,2024-11-18,Euro 95,1.26
 BG,Bulgaria,2024-11-11,Euro 95,1.26
 BG,Bulgaria,2024-11-04,Euro 95,1.25
 BG,Bulgaria,2024-10-28,Euro 95,1.25
@@ -16795,6 +16812,7 @@ BG,Bulgaria,2005-01-24,Euro 95,
 BG,Bulgaria,2005-01-17,Euro 95,
 BG,Bulgaria,2005-01-10,Euro 95,
 BG,Bulgaria,2005-01-03,Euro 95,
+BG,Bulgaria,2024-11-18,Diesel,1.25
 BG,Bulgaria,2024-11-11,Diesel,1.24
 BG,Bulgaria,2024-11-04,Diesel,1.23
 BG,Bulgaria,2024-10-28,Diesel,1.23
@@ -17783,6 +17801,7 @@ BG,Bulgaria,2005-01-24,Diesel,
 BG,Bulgaria,2005-01-17,Diesel,
 BG,Bulgaria,2005-01-10,Diesel,
 BG,Bulgaria,2005-01-03,Diesel,
+BG,Bulgaria,2024-11-18,Heating Oil,
 BG,Bulgaria,2024-11-11,Heating Oil,
 BG,Bulgaria,2024-11-04,Heating Oil,
 BG,Bulgaria,2024-10-28,Heating Oil,
@@ -18771,6 +18790,7 @@ BG,Bulgaria,2005-01-24,Heating Oil,
 BG,Bulgaria,2005-01-17,Heating Oil,
 BG,Bulgaria,2005-01-10,Heating Oil,
 BG,Bulgaria,2005-01-03,Heating Oil,
+BG,Bulgaria,2024-11-18,LPG,0.62
 BG,Bulgaria,2024-11-11,LPG,0.62
 BG,Bulgaria,2024-11-04,LPG,0.62
 BG,Bulgaria,2024-10-28,LPG,0.61
@@ -19759,6 +19779,7 @@ BG,Bulgaria,2005-01-24,LPG,
 BG,Bulgaria,2005-01-17,LPG,
 BG,Bulgaria,2005-01-10,LPG,
 BG,Bulgaria,2005-01-03,LPG,
+CY,Cyprus,2024-11-18,Euro 95,1.39
 CY,Cyprus,2024-11-11,Euro 95,1.39
 CY,Cyprus,2024-11-04,Euro 95,1.39
 CY,Cyprus,2024-10-28,Euro 95,1.4
@@ -20747,6 +20768,7 @@ CY,Cyprus,2005-01-24,Euro 95,0.76
 CY,Cyprus,2005-01-17,Euro 95,0.76
 CY,Cyprus,2005-01-10,Euro 95,0.76
 CY,Cyprus,2005-01-03,Euro 95,0.76
+CY,Cyprus,2024-11-18,Diesel,1.45
 CY,Cyprus,2024-11-11,Diesel,1.45
 CY,Cyprus,2024-11-04,Diesel,1.44
 CY,Cyprus,2024-10-28,Diesel,1.45
@@ -21735,6 +21757,7 @@ CY,Cyprus,2005-01-24,Diesel,0.74
 CY,Cyprus,2005-01-17,Diesel,0.72
 CY,Cyprus,2005-01-10,Diesel,0.72
 CY,Cyprus,2005-01-03,Diesel,0.72
+CY,Cyprus,2024-11-18,Heating Oil,1
 CY,Cyprus,2024-11-11,Heating Oil,1
 CY,Cyprus,2024-11-04,Heating Oil,1.01
 CY,Cyprus,2024-10-28,Heating Oil,1.02
@@ -22723,6 +22746,7 @@ CY,Cyprus,2005-01-24,Heating Oil,0.63
 CY,Cyprus,2005-01-17,Heating Oil,0.62
 CY,Cyprus,2005-01-10,Heating Oil,0.62
 CY,Cyprus,2005-01-03,Heating Oil,0.62
+CY,Cyprus,2024-11-18,LPG,
 CY,Cyprus,2024-11-11,LPG,
 CY,Cyprus,2024-11-04,LPG,
 CY,Cyprus,2024-10-28,LPG,
@@ -23711,6 +23735,7 @@ CY,Cyprus,2005-01-24,LPG,
 CY,Cyprus,2005-01-17,LPG,
 CY,Cyprus,2005-01-10,LPG,
 CY,Cyprus,2005-01-03,LPG,
+CZ,Czechia,2024-11-18,Euro 95,1.39
 CZ,Czechia,2024-11-11,Euro 95,1.41
 CZ,Czechia,2024-11-04,Euro 95,1.42
 CZ,Czechia,2024-10-28,Euro 95,1.41
@@ -24699,6 +24724,7 @@ CZ,Czechia,2005-01-24,Euro 95,0.8
 CZ,Czechia,2005-01-17,Euro 95,0.81
 CZ,Czechia,2005-01-10,Euro 95,0.82
 CZ,Czechia,2005-01-03,Euro 95,0.83
+CZ,Czechia,2024-11-18,Diesel,1.33
 CZ,Czechia,2024-11-11,Diesel,1.36
 CZ,Czechia,2024-11-04,Diesel,1.36
 CZ,Czechia,2024-10-28,Diesel,1.36
@@ -25687,6 +25713,7 @@ CZ,Czechia,2005-01-24,Diesel,0.81
 CZ,Czechia,2005-01-17,Diesel,0.81
 CZ,Czechia,2005-01-10,Diesel,0.83
 CZ,Czechia,2005-01-03,Diesel,0.83
+CZ,Czechia,2024-11-18,Heating Oil,0.85
 CZ,Czechia,2024-11-11,Heating Oil,0.89
 CZ,Czechia,2024-11-04,Heating Oil,0.88
 CZ,Czechia,2024-10-28,Heating Oil,0.86
@@ -26675,6 +26702,7 @@ CZ,Czechia,2005-01-24,Heating Oil,0.5
 CZ,Czechia,2005-01-17,Heating Oil,0.49
 CZ,Czechia,2005-01-10,Heating Oil,0.49
 CZ,Czechia,2005-01-03,Heating Oil,0.5
+CZ,Czechia,2024-11-18,LPG,0.67
 CZ,Czechia,2024-11-11,LPG,0.68
 CZ,Czechia,2024-11-04,LPG,0.68
 CZ,Czechia,2024-10-28,LPG,0.67
@@ -27663,6 +27691,7 @@ CZ,Czechia,2005-01-24,LPG,0.49
 CZ,Czechia,2005-01-17,LPG,0.49
 CZ,Czechia,2005-01-10,LPG,0.5
 CZ,Czechia,2005-01-03,LPG,0.5
+DE,Germany,2024-11-18,Euro 95,1.71
 DE,Germany,2024-11-11,Euro 95,1.71
 DE,Germany,2024-11-04,Euro 95,1.71
 DE,Germany,2024-10-28,Euro 95,1.72
@@ -28651,6 +28680,7 @@ DE,Germany,2005-01-24,Euro 95,1.09
 DE,Germany,2005-01-17,Euro 95,1.11
 DE,Germany,2005-01-10,Euro 95,1.08
 DE,Germany,2005-01-03,Euro 95,1.09
+DE,Germany,2024-11-18,Diesel,1.58
 DE,Germany,2024-11-11,Diesel,1.57
 DE,Germany,2024-11-04,Diesel,1.57
 DE,Germany,2024-10-28,Diesel,1.57
@@ -29639,6 +29669,7 @@ DE,Germany,2005-01-24,Diesel,0.97
 DE,Germany,2005-01-17,Diesel,0.97
 DE,Germany,2005-01-10,Diesel,0.97
 DE,Germany,2005-01-03,Diesel,0.98
+DE,Germany,2024-11-18,Heating Oil,1.02
 DE,Germany,2024-11-11,Heating Oil,1.02
 DE,Germany,2024-11-04,Heating Oil,1
 DE,Germany,2024-10-28,Heating Oil,1.02
@@ -30627,6 +30658,7 @@ DE,Germany,2005-01-24,Heating Oil,0.43
 DE,Germany,2005-01-17,Heating Oil,0.43
 DE,Germany,2005-01-10,Heating Oil,0.43
 DE,Germany,2005-01-03,Heating Oil,0.43
+DE,Germany,2024-11-18,LPG,1
 DE,Germany,2024-11-11,LPG,1
 DE,Germany,2024-11-04,LPG,0.99
 DE,Germany,2024-10-28,LPG,0.98
@@ -31615,6 +31647,7 @@ DE,Germany,2005-01-24,LPG,0.52
 DE,Germany,2005-01-17,LPG,0.52
 DE,Germany,2005-01-10,LPG,0.53
 DE,Germany,2005-01-03,LPG,0.52
+DK,Denmark,2024-11-18,Euro 95,1.93
 DK,Denmark,2024-11-11,Euro 95,1.93
 DK,Denmark,2024-11-04,Euro 95,1.91
 DK,Denmark,2024-10-28,Euro 95,1.89
@@ -32603,6 +32636,7 @@ DK,Denmark,2005-01-24,Euro 95,1.1
 DK,Denmark,2005-01-17,Euro 95,1.1
 DK,Denmark,2005-01-10,Euro 95,1.09
 DK,Denmark,2005-01-03,Euro 95,1.04
+DK,Denmark,2024-11-18,Diesel,1.68
 DK,Denmark,2024-11-11,Diesel,1.65
 DK,Denmark,2024-11-04,Diesel,1.64
 DK,Denmark,2024-10-28,Diesel,1.58
@@ -33591,6 +33625,7 @@ DK,Denmark,2005-01-24,Diesel,0.91
 DK,Denmark,2005-01-17,Diesel,0.91
 DK,Denmark,2005-01-10,Diesel,0.9
 DK,Denmark,2005-01-03,Diesel,0.91
+DK,Denmark,2024-11-18,Heating Oil,1.77
 DK,Denmark,2024-11-11,Heating Oil,1.74
 DK,Denmark,2024-11-04,Heating Oil,1.73
 DK,Denmark,2024-10-28,Heating Oil,1.67
@@ -34579,6 +34614,7 @@ DK,Denmark,2005-01-24,Heating Oil,0.85
 DK,Denmark,2005-01-17,Heating Oil,0.84
 DK,Denmark,2005-01-10,Heating Oil,0.83
 DK,Denmark,2005-01-03,Heating Oil,0.84
+DK,Denmark,2024-11-18,LPG,
 DK,Denmark,2024-11-11,LPG,
 DK,Denmark,2024-11-04,LPG,
 DK,Denmark,2024-10-28,LPG,
@@ -35567,6 +35603,7 @@ DK,Denmark,2005-01-24,LPG,
 DK,Denmark,2005-01-17,LPG,
 DK,Denmark,2005-01-10,LPG,
 DK,Denmark,2005-01-03,LPG,
+EE,Estonia,2024-11-18,Euro 95,1.58
 EE,Estonia,2024-11-11,Euro 95,1.58
 EE,Estonia,2024-11-04,Euro 95,1.57
 EE,Estonia,2024-10-28,Euro 95,1.61
@@ -36555,6 +36592,7 @@ EE,Estonia,2005-01-24,Euro 95,0.68
 EE,Estonia,2005-01-17,Euro 95,0.67
 EE,Estonia,2005-01-10,Euro 95,0.67
 EE,Estonia,2005-01-03,Euro 95,0.67
+EE,Estonia,2024-11-18,Diesel,1.48
 EE,Estonia,2024-11-11,Diesel,1.47
 EE,Estonia,2024-11-04,Diesel,1.43
 EE,Estonia,2024-10-28,Diesel,1.47
@@ -37543,6 +37581,7 @@ EE,Estonia,2005-01-24,Diesel,0.7
 EE,Estonia,2005-01-17,Diesel,0.7
 EE,Estonia,2005-01-10,Diesel,0.71
 EE,Estonia,2005-01-03,Diesel,0.71
+EE,Estonia,2024-11-18,Heating Oil,1.08
 EE,Estonia,2024-11-11,Heating Oil,1.08
 EE,Estonia,2024-11-04,Heating Oil,1.06
 EE,Estonia,2024-10-28,Heating Oil,1.06
@@ -38531,6 +38570,7 @@ EE,Estonia,2005-01-24,Heating Oil,0.42
 EE,Estonia,2005-01-17,Heating Oil,0.43
 EE,Estonia,2005-01-10,Heating Oil,0.43
 EE,Estonia,2005-01-03,Heating Oil,0.43
+EE,Estonia,2024-11-18,LPG,0.76
 EE,Estonia,2024-11-11,LPG,0.75
 EE,Estonia,2024-11-04,LPG,0.75
 EE,Estonia,2024-10-28,LPG,0.75
@@ -39519,6 +39559,7 @@ EE,Estonia,2005-01-24,LPG,0.43
 EE,Estonia,2005-01-17,LPG,0.43
 EE,Estonia,2005-01-10,LPG,0.43
 EE,Estonia,2005-01-03,LPG,0.43
+ES,Spain,2024-11-18,Euro 95,1.5
 ES,Spain,2024-11-11,Euro 95,1.5
 ES,Spain,2024-11-04,Euro 95,1.5
 ES,Spain,2024-10-28,Euro 95,1.51
@@ -40507,6 +40548,7 @@ ES,Spain,2005-01-24,Euro 95,0.85
 ES,Spain,2005-01-17,Euro 95,0.84
 ES,Spain,2005-01-10,Euro 95,0.84
 ES,Spain,2005-01-03,Euro 95,0.84
+ES,Spain,2024-11-18,Diesel,1.41
 ES,Spain,2024-11-11,Diesel,1.4
 ES,Spain,2024-11-04,Diesel,1.39
 ES,Spain,2024-10-28,Diesel,1.39
@@ -41495,6 +41537,7 @@ ES,Spain,2005-01-24,Diesel,0.81
 ES,Spain,2005-01-17,Diesel,0.81
 ES,Spain,2005-01-10,Diesel,0.81
 ES,Spain,2005-01-03,Diesel,0.81
+ES,Spain,2024-11-18,Heating Oil,0.93
 ES,Spain,2024-11-11,Heating Oil,0.93
 ES,Spain,2024-11-04,Heating Oil,0.91
 ES,Spain,2024-10-28,Heating Oil,0.91
@@ -42483,6 +42526,7 @@ ES,Spain,2005-01-24,Heating Oil,0.45
 ES,Spain,2005-01-17,Heating Oil,0.45
 ES,Spain,2005-01-10,Heating Oil,0.45
 ES,Spain,2005-01-03,Heating Oil,0.49
+ES,Spain,2024-11-18,LPG,0.94
 ES,Spain,2024-11-11,LPG,0.95
 ES,Spain,2024-11-04,LPG,0.94
 ES,Spain,2024-10-28,LPG,0.94
@@ -43471,6 +43515,7 @@ ES,Spain,2005-01-24,LPG,0.53
 ES,Spain,2005-01-17,LPG,0.53
 ES,Spain,2005-01-10,LPG,0.53
 ES,Spain,2005-01-03,LPG,0.53
+FI,Finland,2024-11-18,Euro 95,1.85
 FI,Finland,2024-11-11,Euro 95,1.69
 FI,Finland,2024-11-04,Euro 95,1.68
 FI,Finland,2024-10-28,Euro 95,1.7
@@ -44459,6 +44504,7 @@ FI,Finland,2005-01-24,Euro 95,1.09
 FI,Finland,2005-01-17,Euro 95,1.14
 FI,Finland,2005-01-10,Euro 95,1.13
 FI,Finland,2005-01-03,Euro 95,1.11
+FI,Finland,2024-11-18,Diesel,1.84
 FI,Finland,2024-11-11,Diesel,1.65
 FI,Finland,2024-11-04,Diesel,1.6
 FI,Finland,2024-10-28,Diesel,1.66
@@ -45447,6 +45493,7 @@ FI,Finland,2005-01-24,Diesel,0.88
 FI,Finland,2005-01-17,Diesel,0.88
 FI,Finland,2005-01-10,Diesel,0.88
 FI,Finland,2005-01-03,Diesel,0.89
+FI,Finland,2024-11-18,Heating Oil,1.38
 FI,Finland,2024-11-11,Heating Oil,1.38
 FI,Finland,2024-11-04,Heating Oil,1.35
 FI,Finland,2024-10-28,Heating Oil,1.36
@@ -46435,6 +46482,7 @@ FI,Finland,2005-01-24,Heating Oil,0.48
 FI,Finland,2005-01-17,Heating Oil,0.45
 FI,Finland,2005-01-10,Heating Oil,0.44
 FI,Finland,2005-01-03,Heating Oil,0.42
+FI,Finland,2024-11-18,LPG,
 FI,Finland,2024-11-11,LPG,
 FI,Finland,2024-11-04,LPG,
 FI,Finland,2024-10-28,LPG,
@@ -47423,6 +47471,7 @@ FI,Finland,2005-01-24,LPG,
 FI,Finland,2005-01-17,LPG,
 FI,Finland,2005-01-10,LPG,
 FI,Finland,2005-01-03,LPG,
+FR,France,2024-11-18,Euro 95,1.75
 FR,France,2024-11-11,Euro 95,1.75
 FR,France,2024-11-04,Euro 95,1.75
 FR,France,2024-10-28,Euro 95,1.74
@@ -48411,6 +48460,7 @@ FR,France,2005-01-24,Euro 95,1.06
 FR,France,2005-01-17,Euro 95,1.04
 FR,France,2005-01-10,Euro 95,1.03
 FR,France,2005-01-03,Euro 95,1.02
+FR,France,2024-11-18,Diesel,1.63
 FR,France,2024-11-11,Diesel,1.62
 FR,France,2024-11-04,Diesel,1.6
 FR,France,2024-10-28,Diesel,1.6
@@ -49399,6 +49449,7 @@ FR,France,2005-01-24,Diesel,0.92
 FR,France,2005-01-17,Diesel,0.91
 FR,France,2005-01-10,Diesel,0.92
 FR,France,2005-01-03,Diesel,0.92
+FR,France,2024-11-18,Heating Oil,1.15
 FR,France,2024-11-11,Heating Oil,1.15
 FR,France,2024-11-04,Heating Oil,1.14
 FR,France,2024-10-28,Heating Oil,1.15
@@ -50387,6 +50438,7 @@ FR,France,2005-01-24,Heating Oil,0.48
 FR,France,2005-01-17,Heating Oil,0.48
 FR,France,2005-01-10,Heating Oil,0.47
 FR,France,2005-01-03,Heating Oil,0.47
+FR,France,2024-11-18,LPG,0.99
 FR,France,2024-11-11,LPG,0.99
 FR,France,2024-11-04,LPG,0.99
 FR,France,2024-10-28,LPG,0.99
@@ -51375,6 +51427,7 @@ FR,France,2005-01-24,LPG,0.62
 FR,France,2005-01-17,LPG,0.62
 FR,France,2005-01-10,LPG,0.62
 FR,France,2005-01-03,LPG,0.62
+GR,Greece,2024-11-18,Euro 95,1.77
 GR,Greece,2024-11-11,Euro 95,1.78
 GR,Greece,2024-11-04,Euro 95,1.78
 GR,Greece,2024-10-28,Euro 95,1.79
@@ -52363,6 +52416,7 @@ GR,Greece,2005-01-24,Euro 95,0.78
 GR,Greece,2005-01-17,Euro 95,0.77
 GR,Greece,2005-01-10,Euro 95,0.75
 GR,Greece,2005-01-03,Euro 95,0.75
+GR,Greece,2024-11-18,Diesel,1.55
 GR,Greece,2024-11-11,Diesel,1.55
 GR,Greece,2024-11-04,Diesel,1.54
 GR,Greece,2024-10-28,Diesel,1.54
@@ -53351,6 +53405,7 @@ GR,Greece,2005-01-24,Diesel,0.78
 GR,Greece,2005-01-17,Diesel,0.77
 GR,Greece,2005-01-10,Diesel,0.76
 GR,Greece,2005-01-03,Diesel,0.76
+GR,Greece,2024-11-18,Heating Oil,1.19
 GR,Greece,2024-11-11,Heating Oil,1.19
 GR,Greece,2024-11-04,Heating Oil,1.18
 GR,Greece,2024-10-28,Heating Oil,1.18
@@ -54339,6 +54394,7 @@ GR,Greece,2005-01-24,Heating Oil,0.43
 GR,Greece,2005-01-17,Heating Oil,0.42
 GR,Greece,2005-01-10,Heating Oil,0.41
 GR,Greece,2005-01-03,Heating Oil,0.42
+GR,Greece,2024-11-18,LPG,
 GR,Greece,2024-11-11,LPG,
 GR,Greece,2024-11-04,LPG,
 GR,Greece,2024-10-28,LPG,
@@ -55327,6 +55383,7 @@ GR,Greece,2005-01-24,LPG,
 GR,Greece,2005-01-17,LPG,
 GR,Greece,2005-01-10,LPG,
 GR,Greece,2005-01-03,LPG,
+HR,Croatia,2024-11-18,Euro 95,1.52
 HR,Croatia,2024-11-11,Euro 95,1.52
 HR,Croatia,2024-11-04,Euro 95,1.54
 HR,Croatia,2024-10-28,Euro 95,1.54
@@ -56315,6 +56372,7 @@ HR,Croatia,2005-01-24,Euro 95,
 HR,Croatia,2005-01-17,Euro 95,
 HR,Croatia,2005-01-10,Euro 95,
 HR,Croatia,2005-01-03,Euro 95,
+HR,Croatia,2024-11-18,Diesel,1.52
 HR,Croatia,2024-11-11,Diesel,1.51
 HR,Croatia,2024-11-04,Diesel,1.52
 HR,Croatia,2024-10-28,Diesel,1.52
@@ -57303,6 +57361,7 @@ HR,Croatia,2005-01-24,Diesel,
 HR,Croatia,2005-01-17,Diesel,
 HR,Croatia,2005-01-10,Diesel,
 HR,Croatia,2005-01-03,Diesel,
+HR,Croatia,2024-11-18,Heating Oil,0.88
 HR,Croatia,2024-11-11,Heating Oil,0.86
 HR,Croatia,2024-11-04,Heating Oil,0.87
 HR,Croatia,2024-10-28,Heating Oil,0.86
@@ -58291,6 +58350,7 @@ HR,Croatia,2005-01-24,Heating Oil,
 HR,Croatia,2005-01-17,Heating Oil,
 HR,Croatia,2005-01-10,Heating Oil,
 HR,Croatia,2005-01-03,Heating Oil,
+HR,Croatia,2024-11-18,LPG,0.85
 HR,Croatia,2024-11-11,LPG,0.85
 HR,Croatia,2024-11-04,LPG,0.86
 HR,Croatia,2024-10-28,LPG,0.85
@@ -59279,6 +59339,7 @@ HR,Croatia,2005-01-24,LPG,
 HR,Croatia,2005-01-17,LPG,
 HR,Croatia,2005-01-10,LPG,
 HR,Croatia,2005-01-03,LPG,
+HU,Hungary,2024-11-18,Euro 95,1.49
 HU,Hungary,2024-11-11,Euro 95,1.48
 HU,Hungary,2024-11-04,Euro 95,1.47
 HU,Hungary,2024-10-28,Euro 95,1.48
@@ -60267,6 +60328,7 @@ HU,Hungary,2005-01-24,Euro 95,0.98
 HU,Hungary,2005-01-17,Euro 95,0.96
 HU,Hungary,2005-01-10,Euro 95,0.93
 HU,Hungary,2005-01-03,Euro 95,0.95
+HU,Hungary,2024-11-18,Diesel,1.52
 HU,Hungary,2024-11-11,Diesel,1.52
 HU,Hungary,2024-11-04,Diesel,1.49
 HU,Hungary,2024-10-28,Diesel,1.49
@@ -61255,6 +61317,7 @@ HU,Hungary,2005-01-24,Diesel,0.94
 HU,Hungary,2005-01-17,Diesel,0.94
 HU,Hungary,2005-01-10,Diesel,0.93
 HU,Hungary,2005-01-03,Diesel,0.96
+HU,Hungary,2024-11-18,Heating Oil,1.52
 HU,Hungary,2024-11-11,Heating Oil,1.52
 HU,Hungary,2024-11-04,Heating Oil,1.49
 HU,Hungary,2024-10-28,Heating Oil,1.49
@@ -62243,6 +62306,7 @@ HU,Hungary,2005-01-24,Heating Oil,0.94
 HU,Hungary,2005-01-17,Heating Oil,0.94
 HU,Hungary,2005-01-10,Heating Oil,0.93
 HU,Hungary,2005-01-03,Heating Oil,0.96
+HU,Hungary,2024-11-18,LPG,0.92
 HU,Hungary,2024-11-11,LPG,0.91
 HU,Hungary,2024-11-04,LPG,0.89
 HU,Hungary,2024-10-28,LPG,0.9
@@ -63231,6 +63295,7 @@ HU,Hungary,2005-01-24,LPG,0.6
 HU,Hungary,2005-01-17,LPG,0.6
 HU,Hungary,2005-01-10,LPG,0.59
 HU,Hungary,2005-01-03,LPG,0.6
+IE,Ireland,2024-11-18,Euro 95,1.74
 IE,Ireland,2024-11-11,Euro 95,1.73
 IE,Ireland,2024-11-04,Euro 95,1.74
 IE,Ireland,2024-10-28,Euro 95,1.73
@@ -64219,6 +64284,7 @@ IE,Ireland,2005-01-24,Euro 95,0.94
 IE,Ireland,2005-01-17,Euro 95,0.94
 IE,Ireland,2005-01-10,Euro 95,1.01
 IE,Ireland,2005-01-03,Euro 95,1.01
+IE,Ireland,2024-11-18,Diesel,1.67
 IE,Ireland,2024-11-11,Diesel,1.66
 IE,Ireland,2024-11-04,Diesel,1.66
 IE,Ireland,2024-10-28,Diesel,1.66
@@ -65207,6 +65273,7 @@ IE,Ireland,2005-01-24,Diesel,0.95
 IE,Ireland,2005-01-17,Diesel,0.95
 IE,Ireland,2005-01-10,Diesel,0.98
 IE,Ireland,2005-01-03,Diesel,0.98
+IE,Ireland,2024-11-18,Heating Oil,0.97
 IE,Ireland,2024-11-11,Heating Oil,0.96
 IE,Ireland,2024-11-04,Heating Oil,0.96
 IE,Ireland,2024-10-28,Heating Oil,0.96
@@ -66195,6 +66262,7 @@ IE,Ireland,2005-01-24,Heating Oil,0.53
 IE,Ireland,2005-01-17,Heating Oil,0.53
 IE,Ireland,2005-01-10,Heating Oil,0.53
 IE,Ireland,2005-01-03,Heating Oil,0.52
+IE,Ireland,2024-11-18,LPG,
 IE,Ireland,2024-11-11,LPG,
 IE,Ireland,2024-11-04,LPG,
 IE,Ireland,2024-10-28,LPG,
@@ -67183,6 +67251,7 @@ IE,Ireland,2005-01-24,LPG,
 IE,Ireland,2005-01-17,LPG,
 IE,Ireland,2005-01-10,LPG,
 IE,Ireland,2005-01-03,LPG,
+IT,Italy,2024-11-18,Euro 95,1.75
 IT,Italy,2024-11-11,Euro 95,1.76
 IT,Italy,2024-11-04,Euro 95,1.76
 IT,Italy,2024-10-28,Euro 95,1.76
@@ -68171,6 +68240,7 @@ IT,Italy,2005-01-24,Euro 95,1.09
 IT,Italy,2005-01-17,Euro 95,1.09
 IT,Italy,2005-01-10,Euro 95,1.09
 IT,Italy,2005-01-03,Euro 95,1.12
+IT,Italy,2024-11-18,Diesel,1.63
 IT,Italy,2024-11-11,Diesel,1.64
 IT,Italy,2024-11-04,Diesel,1.63
 IT,Italy,2024-10-28,Diesel,1.64
@@ -69159,6 +69229,7 @@ IT,Italy,2005-01-24,Diesel,1
 IT,Italy,2005-01-17,Diesel,1
 IT,Italy,2005-01-10,Diesel,1
 IT,Italy,2005-01-03,Diesel,1.02
+IT,Italy,2024-11-18,Heating Oil,1.42
 IT,Italy,2024-11-11,Heating Oil,1.42
 IT,Italy,2024-11-04,Heating Oil,1.4
 IT,Italy,2024-10-28,Heating Oil,1.4
@@ -70147,6 +70218,7 @@ IT,Italy,2005-01-24,Heating Oil,0.96
 IT,Italy,2005-01-17,Heating Oil,0.95
 IT,Italy,2005-01-10,Heating Oil,0.95
 IT,Italy,2005-01-03,Heating Oil,0.95
+IT,Italy,2024-11-18,LPG,0.73
 IT,Italy,2024-11-11,LPG,0.73
 IT,Italy,2024-11-04,LPG,0.73
 IT,Italy,2024-10-28,LPG,0.73
@@ -71135,6 +71207,7 @@ IT,Italy,2005-01-24,LPG,0.55
 IT,Italy,2005-01-17,LPG,0.55
 IT,Italy,2005-01-10,LPG,0.55
 IT,Italy,2005-01-03,LPG,0.55
+LT,Lithuania,2024-11-18,Euro 95,1.37
 LT,Lithuania,2024-11-11,Euro 95,1.37
 LT,Lithuania,2024-11-04,Euro 95,1.37
 LT,Lithuania,2024-10-28,Euro 95,1.38
@@ -72123,6 +72196,7 @@ LT,Lithuania,2005-01-24,Euro 95,0.73
 LT,Lithuania,2005-01-17,Euro 95,0.71
 LT,Lithuania,2005-01-10,Euro 95,0.7
 LT,Lithuania,2005-01-03,Euro 95,0.7
+LT,Lithuania,2024-11-18,Diesel,1.38
 LT,Lithuania,2024-11-11,Diesel,1.36
 LT,Lithuania,2024-11-04,Diesel,1.35
 LT,Lithuania,2024-10-28,Diesel,1.36
@@ -73111,6 +73185,7 @@ LT,Lithuania,2005-01-24,Diesel,0.72
 LT,Lithuania,2005-01-17,Diesel,0.72
 LT,Lithuania,2005-01-10,Diesel,0.72
 LT,Lithuania,2005-01-03,Diesel,0.7
+LT,Lithuania,2024-11-18,Heating Oil,0.85
 LT,Lithuania,2024-11-11,Heating Oil,0.85
 LT,Lithuania,2024-11-04,Heating Oil,0.84
 LT,Lithuania,2024-10-28,Heating Oil,0.85
@@ -74099,6 +74174,7 @@ LT,Lithuania,2005-01-24,Heating Oil,0.39
 LT,Lithuania,2005-01-17,Heating Oil,0.38
 LT,Lithuania,2005-01-10,Heating Oil,0.39
 LT,Lithuania,2005-01-03,Heating Oil,0.38
+LT,Lithuania,2024-11-18,LPG,0.71
 LT,Lithuania,2024-11-11,LPG,0.71
 LT,Lithuania,2024-11-04,LPG,0.7
 LT,Lithuania,2024-10-28,LPG,0.7
@@ -75087,6 +75163,7 @@ LT,Lithuania,2005-01-24,LPG,0.43
 LT,Lithuania,2005-01-17,LPG,0.43
 LT,Lithuania,2005-01-10,LPG,0.43
 LT,Lithuania,2005-01-03,LPG,0.43
+LU,Luxembourg,2024-11-18,Euro 95,1.47
 LU,Luxembourg,2024-11-11,Euro 95,1.47
 LU,Luxembourg,2024-11-04,Euro 95,1.45
 LU,Luxembourg,2024-10-28,Euro 95,1.49
@@ -76075,6 +76152,7 @@ LU,Luxembourg,2005-01-24,Euro 95,0.92
 LU,Luxembourg,2005-01-17,Euro 95,0.9
 LU,Luxembourg,2005-01-10,Euro 95,0.88
 LU,Luxembourg,2005-01-03,Euro 95,0.88
+LU,Luxembourg,2024-11-18,Diesel,1.43
 LU,Luxembourg,2024-11-11,Diesel,1.45
 LU,Luxembourg,2024-11-04,Diesel,1.4
 LU,Luxembourg,2024-10-28,Diesel,1.43
@@ -77063,6 +77141,7 @@ LU,Luxembourg,2005-01-24,Diesel,0.72
 LU,Luxembourg,2005-01-17,Diesel,0.72
 LU,Luxembourg,2005-01-10,Diesel,0.72
 LU,Luxembourg,2005-01-03,Diesel,0.72
+LU,Luxembourg,2024-11-18,Heating Oil,0.87
 LU,Luxembourg,2024-11-11,Heating Oil,0.9
 LU,Luxembourg,2024-11-04,Heating Oil,0.85
 LU,Luxembourg,2024-10-28,Heating Oil,0.88
@@ -78051,6 +78130,7 @@ LU,Luxembourg,2005-01-24,Heating Oil,0.38
 LU,Luxembourg,2005-01-17,Heating Oil,0.38
 LU,Luxembourg,2005-01-10,Heating Oil,0.36
 LU,Luxembourg,2005-01-03,Heating Oil,0.37
+LU,Luxembourg,2024-11-18,LPG,0.79
 LU,Luxembourg,2024-11-11,LPG,0.79
 LU,Luxembourg,2024-11-04,LPG,0.77
 LU,Luxembourg,2024-10-28,LPG,0.77
@@ -79039,6 +79119,7 @@ LU,Luxembourg,2005-01-24,LPG,0.39
 LU,Luxembourg,2005-01-17,LPG,0.39
 LU,Luxembourg,2005-01-10,LPG,0.39
 LU,Luxembourg,2005-01-03,LPG,0.41
+LV,Latvia,2024-11-18,Euro 95,1.45
 LV,Latvia,2024-11-11,Euro 95,1.45
 LV,Latvia,2024-11-04,Euro 95,1.55
 LV,Latvia,2024-10-28,Euro 95,1.57
@@ -80027,6 +80108,7 @@ LV,Latvia,2005-01-24,Euro 95,0.71
 LV,Latvia,2005-01-17,Euro 95,0.72
 LV,Latvia,2005-01-10,Euro 95,0.72
 LV,Latvia,2005-01-03,Euro 95,0.72
+LV,Latvia,2024-11-18,Diesel,1.44
 LV,Latvia,2024-11-11,Diesel,1.44
 LV,Latvia,2024-11-04,Diesel,1.5
 LV,Latvia,2024-10-28,Diesel,1.53
@@ -81015,6 +81097,7 @@ LV,Latvia,2005-01-24,Diesel,0.7
 LV,Latvia,2005-01-17,Diesel,0.7
 LV,Latvia,2005-01-10,Diesel,0.7
 LV,Latvia,2005-01-03,Diesel,0.7
+LV,Latvia,2024-11-18,Heating Oil,0.96
 LV,Latvia,2024-11-11,Heating Oil,0.96
 LV,Latvia,2024-11-04,Heating Oil,1.07
 LV,Latvia,2024-10-28,Heating Oil,1.05
@@ -82003,6 +82086,7 @@ LV,Latvia,2005-01-24,Heating Oil,0.47
 LV,Latvia,2005-01-17,Heating Oil,0.47
 LV,Latvia,2005-01-10,Heating Oil,0.47
 LV,Latvia,2005-01-03,Heating Oil,0.47
+LV,Latvia,2024-11-18,LPG,0.77
 LV,Latvia,2024-11-11,LPG,0.77
 LV,Latvia,2024-11-04,LPG,0.79
 LV,Latvia,2024-10-28,LPG,0.79
@@ -82991,6 +83075,7 @@ LV,Latvia,2005-01-24,LPG,0.4
 LV,Latvia,2005-01-17,LPG,0.4
 LV,Latvia,2005-01-10,LPG,0.4
 LV,Latvia,2005-01-03,LPG,0.41
+MT,Malta,2024-11-18,Euro 95,1.34
 MT,Malta,2024-11-11,Euro 95,1.34
 MT,Malta,2024-11-04,Euro 95,1.34
 MT,Malta,2024-10-28,Euro 95,1.34
@@ -83979,6 +84064,7 @@ MT,Malta,2005-01-24,Euro 95,0.87
 MT,Malta,2005-01-17,Euro 95,0.87
 MT,Malta,2005-01-10,Euro 95,0.87
 MT,Malta,2005-01-03,Euro 95,0.86
+MT,Malta,2024-11-18,Diesel,1.21
 MT,Malta,2024-11-11,Diesel,1.21
 MT,Malta,2024-11-04,Diesel,1.21
 MT,Malta,2024-10-28,Diesel,1.21
@@ -84967,6 +85053,7 @@ MT,Malta,2005-01-24,Diesel,0.83
 MT,Malta,2005-01-17,Diesel,0.83
 MT,Malta,2005-01-10,Diesel,0.83
 MT,Malta,2005-01-03,Diesel,0.83
+MT,Malta,2024-11-18,Heating Oil,1
 MT,Malta,2024-11-11,Heating Oil,1
 MT,Malta,2024-11-04,Heating Oil,1
 MT,Malta,2024-10-28,Heating Oil,1
@@ -85955,6 +86042,7 @@ MT,Malta,2005-01-24,Heating Oil,0.37
 MT,Malta,2005-01-17,Heating Oil,0.37
 MT,Malta,2005-01-10,Heating Oil,0.37
 MT,Malta,2005-01-03,Heating Oil,0.37
+MT,Malta,2024-11-18,LPG,
 MT,Malta,2024-11-11,LPG,
 MT,Malta,2024-11-04,LPG,
 MT,Malta,2024-10-28,LPG,
@@ -86943,6 +87031,7 @@ MT,Malta,2005-01-24,LPG,
 MT,Malta,2005-01-17,LPG,
 MT,Malta,2005-01-10,LPG,
 MT,Malta,2005-01-03,LPG,
+NL,Netherlands,2024-11-18,Euro 95,1.96
 NL,Netherlands,2024-11-11,Euro 95,1.93
 NL,Netherlands,2024-11-04,Euro 95,1.92
 NL,Netherlands,2024-10-28,Euro 95,1.93
@@ -87931,6 +88020,7 @@ NL,Netherlands,2005-01-24,Euro 95,1.25
 NL,Netherlands,2005-01-17,Euro 95,1.25
 NL,Netherlands,2005-01-10,Euro 95,1.22
 NL,Netherlands,2005-01-03,Euro 95,1.19
+NL,Netherlands,2024-11-18,Diesel,1.74
 NL,Netherlands,2024-11-11,Diesel,1.69
 NL,Netherlands,2024-11-04,Diesel,1.66
 NL,Netherlands,2024-10-28,Diesel,1.66
@@ -88919,6 +89009,7 @@ NL,Netherlands,2005-01-24,Diesel,0.92
 NL,Netherlands,2005-01-17,Diesel,0.91
 NL,Netherlands,2005-01-10,Diesel,0.91
 NL,Netherlands,2005-01-03,Diesel,0.9
+NL,Netherlands,2024-11-18,Heating Oil,
 NL,Netherlands,2024-11-11,Heating Oil,
 NL,Netherlands,2024-11-04,Heating Oil,
 NL,Netherlands,2024-10-28,Heating Oil,
@@ -89907,6 +89998,7 @@ NL,Netherlands,2005-01-24,Heating Oil,0.71
 NL,Netherlands,2005-01-17,Heating Oil,0.7
 NL,Netherlands,2005-01-10,Heating Oil,0.68
 NL,Netherlands,2005-01-03,Heating Oil,0.67
+NL,Netherlands,2024-11-18,LPG,0.84
 NL,Netherlands,2024-11-11,LPG,0.84
 NL,Netherlands,2024-11-04,LPG,0.83
 NL,Netherlands,2024-10-28,LPG,0.83
@@ -90895,6 +90987,7 @@ NL,Netherlands,2005-01-24,LPG,0.47
 NL,Netherlands,2005-01-17,LPG,0.47
 NL,Netherlands,2005-01-10,LPG,0.47
 NL,Netherlands,2005-01-03,LPG,0.48
+PL,Poland,2024-11-18,Euro 95,1.41
 PL,Poland,2024-11-11,Euro 95,1.41
 PL,Poland,2024-11-04,Euro 95,1.41
 PL,Poland,2024-10-28,Euro 95,1.41
@@ -91883,6 +91976,7 @@ PL,Poland,2005-01-24,Euro 95,0.88
 PL,Poland,2005-01-17,Euro 95,0.88
 PL,Poland,2005-01-10,Euro 95,0.88
 PL,Poland,2005-01-03,Euro 95,0.88
+PL,Poland,2024-11-18,Diesel,1.42
 PL,Poland,2024-11-11,Diesel,1.42
 PL,Poland,2024-11-04,Diesel,1.42
 PL,Poland,2024-10-28,Diesel,1.42
@@ -92871,6 +92965,7 @@ PL,Poland,2005-01-24,Diesel,0.83
 PL,Poland,2005-01-17,Diesel,0.83
 PL,Poland,2005-01-10,Diesel,0.84
 PL,Poland,2005-01-03,Diesel,0.84
+PL,Poland,2024-11-18,Heating Oil,1.02
 PL,Poland,2024-11-11,Heating Oil,1.01
 PL,Poland,2024-11-04,Heating Oil,0.99
 PL,Poland,2024-10-28,Heating Oil,1
@@ -93859,6 +93954,7 @@ PL,Poland,2005-01-24,Heating Oil,0.44
 PL,Poland,2005-01-17,Heating Oil,0.43
 PL,Poland,2005-01-10,Heating Oil,0.42
 PL,Poland,2005-01-03,Heating Oil,0.41
+PL,Poland,2024-11-18,LPG,0.73
 PL,Poland,2024-11-11,LPG,0.71
 PL,Poland,2024-11-04,LPG,0.71
 PL,Poland,2024-10-28,LPG,0.71
@@ -94847,6 +94943,7 @@ PL,Poland,2005-01-24,LPG,0.46
 PL,Poland,2005-01-17,LPG,0.47
 PL,Poland,2005-01-10,LPG,0.47
 PL,Poland,2005-01-03,LPG,0.48
+PT,Portugal,2024-11-18,Euro 95,1.7
 PT,Portugal,2024-11-11,Euro 95,1.69
 PT,Portugal,2024-11-04,Euro 95,1.68
 PT,Portugal,2024-10-28,Euro 95,1.71
@@ -95835,6 +95932,7 @@ PT,Portugal,2005-01-24,Euro 95,1
 PT,Portugal,2005-01-17,Euro 95,1
 PT,Portugal,2005-01-10,Euro 95,1
 PT,Portugal,2005-01-03,Euro 95,1.01
+PT,Portugal,2024-11-18,Diesel,1.58
 PT,Portugal,2024-11-11,Diesel,1.58
 PT,Portugal,2024-11-04,Diesel,1.56
 PT,Portugal,2024-10-28,Diesel,1.56
@@ -96823,6 +96921,7 @@ PT,Portugal,2005-01-24,Diesel,0.83
 PT,Portugal,2005-01-17,Diesel,0.83
 PT,Portugal,2005-01-10,Diesel,0.85
 PT,Portugal,2005-01-03,Diesel,0.86
+PT,Portugal,2024-11-18,Heating Oil,1.58
 PT,Portugal,2024-11-11,Heating Oil,1.58
 PT,Portugal,2024-11-04,Heating Oil,1.57
 PT,Portugal,2024-10-28,Heating Oil,1.58
@@ -97811,6 +97910,7 @@ PT,Portugal,2005-01-24,Heating Oil,0.51
 PT,Portugal,2005-01-17,Heating Oil,0.5
 PT,Portugal,2005-01-10,Heating Oil,0.52
 PT,Portugal,2005-01-03,Heating Oil,0.52
+PT,Portugal,2024-11-18,LPG,0.91
 PT,Portugal,2024-11-11,LPG,0.9
 PT,Portugal,2024-11-04,LPG,0.89
 PT,Portugal,2024-10-28,LPG,0.88
@@ -98799,6 +98899,7 @@ PT,Portugal,2005-01-24,LPG,0.54
 PT,Portugal,2005-01-17,LPG,0.53
 PT,Portugal,2005-01-10,LPG,0.53
 PT,Portugal,2005-01-03,LPG,0.53
+RO,Romania,2024-11-18,Euro 95,1.41
 RO,Romania,2024-11-11,Euro 95,1.42
 RO,Romania,2024-11-04,Euro 95,1.42
 RO,Romania,2024-10-28,Euro 95,1.43
@@ -99787,6 +99888,7 @@ RO,Romania,2005-01-24,Euro 95,
 RO,Romania,2005-01-17,Euro 95,
 RO,Romania,2005-01-10,Euro 95,
 RO,Romania,2005-01-03,Euro 95,
+RO,Romania,2024-11-18,Diesel,1.44
 RO,Romania,2024-11-11,Diesel,1.44
 RO,Romania,2024-11-04,Diesel,1.43
 RO,Romania,2024-10-28,Diesel,1.43
@@ -100775,6 +100877,7 @@ RO,Romania,2005-01-24,Diesel,
 RO,Romania,2005-01-17,Diesel,
 RO,Romania,2005-01-10,Diesel,
 RO,Romania,2005-01-03,Diesel,
+RO,Romania,2024-11-18,Heating Oil,0.89
 RO,Romania,2024-11-11,Heating Oil,0.88
 RO,Romania,2024-11-04,Heating Oil,0.88
 RO,Romania,2024-10-28,Heating Oil,0.89
@@ -101763,6 +101866,7 @@ RO,Romania,2005-01-24,Heating Oil,
 RO,Romania,2005-01-17,Heating Oil,
 RO,Romania,2005-01-10,Heating Oil,
 RO,Romania,2005-01-03,Heating Oil,
+RO,Romania,2024-11-18,LPG,0.71
 RO,Romania,2024-11-11,LPG,0.7
 RO,Romania,2024-11-04,LPG,0.7
 RO,Romania,2024-10-28,LPG,0.7
@@ -102751,6 +102855,7 @@ RO,Romania,2005-01-24,LPG,
 RO,Romania,2005-01-17,LPG,
 RO,Romania,2005-01-10,LPG,
 RO,Romania,2005-01-03,LPG,
+SE,Sweden,2024-11-18,Euro 95,1.49
 SE,Sweden,2024-11-11,Euro 95,1.49
 SE,Sweden,2024-11-04,Euro 95,1.46
 SE,Sweden,2024-10-28,Euro 95,1.51
@@ -103739,6 +103844,7 @@ SE,Sweden,2005-01-24,Euro 95,1.11
 SE,Sweden,2005-01-17,Euro 95,1.1
 SE,Sweden,2005-01-10,Euro 95,1.09
 SE,Sweden,2005-01-03,Euro 95,1.07
+SE,Sweden,2024-11-18,Diesel,1.54
 SE,Sweden,2024-11-11,Diesel,1.53
 SE,Sweden,2024-11-04,Diesel,1.5
 SE,Sweden,2024-10-28,Diesel,1.51
@@ -104727,6 +104833,7 @@ SE,Sweden,2005-01-24,Diesel,0.99
 SE,Sweden,2005-01-17,Diesel,0.98
 SE,Sweden,2005-01-10,Diesel,0.97
 SE,Sweden,2005-01-03,Diesel,1.01
+SE,Sweden,2024-11-18,Heating Oil,1.2
 SE,Sweden,2024-11-11,Heating Oil,1.2
 SE,Sweden,2024-11-04,Heating Oil,1.17
 SE,Sweden,2024-10-28,Heating Oil,1.19
@@ -105715,6 +105822,7 @@ SE,Sweden,2005-01-24,Heating Oil,0.86
 SE,Sweden,2005-01-17,Heating Oil,0.85
 SE,Sweden,2005-01-10,Heating Oil,0.86
 SE,Sweden,2005-01-03,Heating Oil,0.85
+SE,Sweden,2024-11-18,LPG,
 SE,Sweden,2024-11-11,LPG,
 SE,Sweden,2024-11-04,LPG,
 SE,Sweden,2024-10-28,LPG,
@@ -106703,6 +106811,7 @@ SE,Sweden,2005-01-24,LPG,
 SE,Sweden,2005-01-17,LPG,
 SE,Sweden,2005-01-10,LPG,
 SE,Sweden,2005-01-03,LPG,
+SI,Slovenia,2024-11-18,Euro 95,1.49
 SI,Slovenia,2024-11-11,Euro 95,1.51
 SI,Slovenia,2024-11-04,Euro 95,1.52
 SI,Slovenia,2024-10-28,Euro 95,1.49
@@ -107691,6 +107800,7 @@ SI,Slovenia,2005-01-24,Euro 95,0.84
 SI,Slovenia,2005-01-17,Euro 95,0.82
 SI,Slovenia,2005-01-10,Euro 95,0.82
 SI,Slovenia,2005-01-03,Euro 95,0.82
+SI,Slovenia,2024-11-18,Diesel,1.54
 SI,Slovenia,2024-11-11,Diesel,1.54
 SI,Slovenia,2024-11-04,Diesel,1.55
 SI,Slovenia,2024-10-28,Diesel,1.53
@@ -108679,6 +108789,7 @@ SI,Slovenia,2005-01-24,Diesel,0.83
 SI,Slovenia,2005-01-17,Diesel,0.82
 SI,Slovenia,2005-01-10,Diesel,0.82
 SI,Slovenia,2005-01-03,Diesel,0.82
+SI,Slovenia,2024-11-18,Heating Oil,1.15
 SI,Slovenia,2024-11-11,Heating Oil,1.15
 SI,Slovenia,2024-11-04,Heating Oil,1.17
 SI,Slovenia,2024-10-28,Heating Oil,1.16
@@ -109667,6 +109778,7 @@ SI,Slovenia,2005-01-24,Heating Oil,0.48
 SI,Slovenia,2005-01-17,Heating Oil,0.49
 SI,Slovenia,2005-01-10,Heating Oil,0.49
 SI,Slovenia,2005-01-03,Heating Oil,0.49
+SI,Slovenia,2024-11-18,LPG,0.92
 SI,Slovenia,2024-11-11,LPG,0.93
 SI,Slovenia,2024-11-04,LPG,0.93
 SI,Slovenia,2024-10-28,LPG,0.93
@@ -110655,6 +110767,7 @@ SI,Slovenia,2005-01-24,LPG,0.54
 SI,Slovenia,2005-01-17,LPG,0.54
 SI,Slovenia,2005-01-10,LPG,0.54
 SI,Slovenia,2005-01-03,LPG,0.54
+SK,Slovakia,2024-11-18,Euro 95,1.5
 SK,Slovakia,2024-11-11,Euro 95,1.5
 SK,Slovakia,2024-11-04,Euro 95,1.5
 SK,Slovakia,2024-10-28,Euro 95,1.52
@@ -111643,6 +111756,7 @@ SK,Slovakia,2005-01-24,Euro 95,0.88
 SK,Slovakia,2005-01-17,Euro 95,0.86
 SK,Slovakia,2005-01-10,Euro 95,0.85
 SK,Slovakia,2005-01-03,Euro 95,0.86
+SK,Slovakia,2024-11-18,Diesel,1.44
 SK,Slovakia,2024-11-11,Diesel,1.42
 SK,Slovakia,2024-11-04,Diesel,1.42
 SK,Slovakia,2024-10-28,Diesel,1.42
@@ -112631,6 +112745,7 @@ SK,Slovakia,2005-01-24,Diesel,0.87
 SK,Slovakia,2005-01-17,Diesel,0.87
 SK,Slovakia,2005-01-10,Diesel,0.88
 SK,Slovakia,2005-01-03,Diesel,0.9
+SK,Slovakia,2024-11-18,Heating Oil,
 SK,Slovakia,2024-11-11,Heating Oil,
 SK,Slovakia,2024-11-04,Heating Oil,
 SK,Slovakia,2024-10-28,Heating Oil,
@@ -113619,6 +113734,7 @@ SK,Slovakia,2005-01-24,Heating Oil,0.43
 SK,Slovakia,2005-01-17,Heating Oil,0.43
 SK,Slovakia,2005-01-10,Heating Oil,0.43
 SK,Slovakia,2005-01-03,Heating Oil,0.43
+SK,Slovakia,2024-11-18,LPG,0.75
 SK,Slovakia,2024-11-11,LPG,0.74
 SK,Slovakia,2024-11-04,LPG,0.74
 SK,Slovakia,2024-10-28,LPG,0.73
@@ -114607,6 +114723,7 @@ SK,Slovakia,2005-01-24,LPG,0.51
 SK,Slovakia,2005-01-17,LPG,0.51
 SK,Slovakia,2005-01-10,LPG,0.52
 SK,Slovakia,2005-01-03,LPG,0.52
+UK,United Kingdom,2024-11-18,Euro 95,
 UK,United Kingdom,2024-11-11,Euro 95,
 UK,United Kingdom,2024-11-04,Euro 95,
 UK,United Kingdom,2024-10-28,Euro 95,
@@ -115595,6 +115712,7 @@ UK,United Kingdom,2005-01-24,Euro 95,1.13
 UK,United Kingdom,2005-01-17,Euro 95,1.12
 UK,United Kingdom,2005-01-10,Euro 95,1.14
 UK,United Kingdom,2005-01-03,Euro 95,1.15
+UK,United Kingdom,2024-11-18,Diesel,
 UK,United Kingdom,2024-11-11,Diesel,
 UK,United Kingdom,2024-11-04,Diesel,
 UK,United Kingdom,2024-10-28,Diesel,
@@ -116583,6 +116701,7 @@ UK,United Kingdom,2005-01-24,Diesel,1.21
 UK,United Kingdom,2005-01-17,Diesel,1.19
 UK,United Kingdom,2005-01-10,Diesel,1.22
 UK,United Kingdom,2005-01-03,Diesel,1.2
+UK,United Kingdom,2024-11-18,Heating Oil,
 UK,United Kingdom,2024-11-11,Heating Oil,
 UK,United Kingdom,2024-11-04,Heating Oil,
 UK,United Kingdom,2024-10-28,Heating Oil,
@@ -117571,6 +117690,7 @@ UK,United Kingdom,2005-01-24,Heating Oil,0.38
 UK,United Kingdom,2005-01-17,Heating Oil,0.37
 UK,United Kingdom,2005-01-10,Heating Oil,0.37
 UK,United Kingdom,2005-01-03,Heating Oil,0.37
+UK,United Kingdom,2024-11-18,LPG,
 UK,United Kingdom,2024-11-11,LPG,
 UK,United Kingdom,2024-11-04,LPG,
 UK,United Kingdom,2024-10-28,LPG,
