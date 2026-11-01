@@ -1,12 +1,12 @@
 # Fuel Prices in Europe
 
-<a href="https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/" target="_blank">
+<a href="https://vosbrucke.shinyapps.io/fuel-prices-in-europe/" target="_blank">
   <img src="https://img.shields.io/badge/Open%20Shiny%20App-Launch%20Dashboard-0F4C81?style=for-the-badge&logo=rstudio" alt="Open the Shiny app by clicking here" />
 </a>
 
 This repository contains an interactive Shiny dashboard for exploring fuel prices across European countries and zones. It was created to address a common issue in public reporting: changes in oil and fuel prices can often be discussed missing historical context which can lead to misleading assumptions about price level developments. The project also highlights how national regulations and market specific structures shape pricing across Europe. The dashboard turns weekly fuel-price data into a practical analytical tool for comparing markets, tracking relative changes, and visualising the geographic distribution of fuel costs.
 
-The deployed app is available here: https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/
+The deployed app is available here: https://vosbrucke.shinyapps.io/fuel-prices-in-europe/
 
 An example output:
 ![app](https://github.com/Vosbrucke/Fuel_prices_in_europe/blob/main/Price%20of%20Euro%2095%20in%20Europe%20until%2005%20August%202024.jpeg "Fuel prices example")
