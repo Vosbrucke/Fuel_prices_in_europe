@@ -1,37 +1,92 @@
-# Fuel Prices in European Countries & Zones
-Welcome to a project, where we explore fuel price variations across European countries and zones. You can interact with the data and customize your selection by following the link to the deployed app [here](https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/). Have fun, and if you find the app useful, feel free to leave a star on the repo! 😊
+# Fuel Prices in Europe
 
-### Example output:
-![app](https://github.com/Vosbrucke/Fuel_prices_in_europe/blob/main/Price%20of%20Euro%2095%20in%20Europe%20until%2005%20August%202024.jpeg "Fuel prices example")
+<a href="https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/" target="_blank">
+  <img src="https://img.shields.io/badge/Open%20Shiny%20App-Launch%20Dashboard-0F4C81?style=for-the-badge&logo=rstudio" alt="Open the Shiny app" />
+</a>
 
-It was quite a shock we experienced in 2022, wasn't it? The Russian attack on Ukraine had major repercussions, affecting fuel prices universally across the countries in the chart. Or did it?
+This repository contains an interactive Shiny dashboard for exploring fuel prices across European countries and zones. It was created to address a common issue in public reporting: changes in oil and fuel prices can often be discussed missing historical context which can lead to misleading assumptions about price level developments. The project also highlights how national regulations and market specific structures shape pricing across Europe. The dashboard turns weekly fuel-price data into a practical analytical tool for comparing markets, tracking relative changes, and visualising the geographic distribution of fuel costs.
 
-What’s the deal with Malta? At first glance, the data might seem incorrect, but Malta’s case is actually quite unique. In 2013, Malta’s government introduced a policy under which the state-owned fuel company secured long-term fuel supply agreements. Although the policy initially faced (at the time, justified) [criticism](https://timesofmalta.com/article/Fuel-price-stability-a-myth.556585), in hindsight, it effectively kept prices lower while maintaining price stability—its primary goal.
+The deployed app is available here: https://vosbrucke.shinyapps.io/Fuel_prices_in_europe/
 
-### Objective
-This project was created to provide students, researchers, and the general public with an interactive, user-friendly historical overview of fuel prices across Europe.
+## What the dashboard covers
 
-### History
-This project began in 2022 as an attempt to explain Poland’s inflation wave and the impact of fuel prices at the time. Early on, I realized that there was no easily accessible, visually appealing dataset displaying historical fuel prices across multiple countries — so I decided to build one myself. This effort culminated in research published [here](https://github.com/Vosbrucke/Poland_Pb95_prices) on GitHub.
+The app is built around a single global fuel selector and a set of views that allow users to:
 
-Later, while studying abroad during the fuel crisis, I frequently revisited my research in discussions with friends and fellow students. I noticed that the way fuel prices were covered in the media often carried political bias and lacked economic context. Many people were unaware of the broader pricing dynamics without comparative data across neighboring countries. These conversations inspired me to expand the project.
+- compare price trends over time for multiple countries or zones,
+- switch between raw price levels and relative price indexes,
+- view a Europe-wide map of current or relative prices,
+- inspect country-level snapshots against multiple time horizons,
+- review a bar chart of current prices by market,
+- explore relative change patterns through a heatmap,
+- display and filter market notes and commentary attached to specific dates.
 
-However, my initial charts were becoming outdated, and I wanted a way to generate up-to-date, interactive visualizations. This led me to create a Shiny App that allowed users to select a country, fuel type, and date.
+In practical terms, the dashboard answers questions such as:
 
-Well, at least, that was the plan! 😅
+- which countries are relatively expensive or cheap today,
+- how a country compares with its regional peers,
+- how quickly prices have moved over the past week, month, or year,
+- how the latest prices are distributed across Europe.
 
-Once I built it, I quickly realized I would have to update the data manually every week—a repetitive task I wasn’t eager to maintain. But since coding allows for automation, I wondered if GitHub had a solution. That’s when I discovered GitHub Actions, and soon, I had a script running weekly to refresh the data automatically.
+## Main dashboard views
 
-That problem was solved. But soon, a new idea emerged—one that would enhance the experience and make answering questions faster. The chart needed to be interactive, yet I couldn’t find a solution that met my visual expectations.
+### 1. Price trend chart
 
-Then, in August 2024, I stumbled upon echarts4r—a package that instantly caught my attention. It allowed for beautiful, interactive charts, and it was exactly what my project needed! Before long, I had an operational site that fulfilled my original vision: a fully interactive, aesthetically pleasing fuel price dashboard.
+This is the main analytical view of the app. It lets the user:
 
-### Phases:
-1. Building a Shiny App with a static chart
-2. Adding interactivity for country, fuel type, and date selection
-3. Implementing GitHub Actions to automate weekly data updates
-4. Enhancing interactivity by transitioning from ggplot to echarts4r
+- choose a fuel type,
+- select one or more countries/zones,
+- choose a date range,
+- switch between absolute price trend and relative price index mode,
+- enable market notes that appear as vertical markers on the chart.
 
-### TODOs:
-* Reduce the size of the Shiny App input file to improve loading speed
-* Create an interactive map version
+### Annotations and market notes
+
+The dashboard also supports date-based annotations, which are short market notes or commentary items attached to specific points in time. These annotations can be toggled on in the trend and index views and are shown as vertical markers on the chart. The notes are filtered by the selected fuel and date range, so only relevant market commentary is displayed for the current analysis.
+
+The annotation dataset is stored in the repository as `Data/annotations.csv`. Each row typically contains a date, a fuel reference, and the associated note text. When users highlight a marked date, the app displays the matching commentary alongside the chart so that major market events can be interpreted in context.
+
+### 2. Price on a map
+
+This tab places the selected fuel on a Europe map. It supports:
+
+- current-price or relative-change view,
+- date selection for the comparison snapshot,
+- highlight selection for chosen countries,
+- optional country labels.
+
+### 3. Price bar chart
+
+This view compares country prices in a bar format at a chosen reference date, with regions and value formatting for quick market comparison.
+
+### 4. Relative change tracking
+
+A heatmap-style chart summarises relative price changes by country across multiple time windows. This gives a compact view of which countries are becoming more or less expensive over different periods.
+
+## Repository structure
+
+```text
+.
+├── Data/
+│   └── oil_bulletin_long.csv
+│   └── annotations.csv
+├── R/
+│   └── Shiny.R
+├── README.md
+├── DESCRIPTION
+└── .gitignore
+```
+
+## How to run locally
+
+Open the project in R and source the app script:
+
+```r
+source("R/Shiny.R")
+shinyApp(ui, server)
+```
+
+## Data source
+
+The project uses weekly fuel-price data from the Oil Bulletin published by the European Commission. The raw source is stored in the repository as a long-format CSV file in the Data folder and gets updated automatically each Monday.
+
+The dashboard also loads market annotations from `Data/annotations.csv`, which help contextualise specific dates with short notes on price shocks, policy changes or other relevant market developments.
