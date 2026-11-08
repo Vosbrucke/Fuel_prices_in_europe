@@ -1,8 +1,10 @@
 date,country,fuel,short_label,note,category,impact
 2014-01-01,Malta,Euro 95,Long-term supply contract,"Malta secured a long-term fuel supply contract, helping stabilise domestic prices from 2014 onward.",Policy,Low
 2022-02-28,European Union,Euro 95,Russia invasion,"Russia's invasion of Ukraine triggered a major energy and fuel-price shock across Europe.",Supply shock,High
+2024-01-01,Sweden,Diesel,Reduction Mandate Cut,"Swedish government slashes the greenhouse gas reduction obligation for diesel from 30.5% down to 6%.",Policy,High
+2024-07-01,Sweden,Euro 95,Tax reduction,"Sweden implements a temporary reduction in fuel and carbon taxes effective",Policy,Low
 2026-03-02,European Union,Euro 95,US-Iran war,"US-Iran war disrupted oil supply as Iran claims control over oil passage in strait of Hormuz limitting rougly 20% of global oil flow.",Supply shock,High
 2026-04-06,European Union,Euro 95,Market correction,"A broad correction followed earlier geopolitical pressure, as oil and fuel prices eased after the short-lived supply shock.",Market,Medium
 2026-08-17,Poland,Euro 95,Margin tax rule,"The Polish government introduced a tax on excess margins for refineries and fuel suppliers to cool retail fuel prices.",Policy,Medium
-2026-09-07,Poland,Euro 95,Post-policy adjustment,"After the margin-tax measure, the market adjusted and prices stabilised before the next round of intervention.",Market,Medium
+2026-09-07,European Union,Euro 95,Market correction," market adjusted and prices stabilised before the next round of intervention.",Market,Medium
 2026-10-05,Poland,Euro 95,Price cap reinstated,"The government reintroduced price-gouging controls and margin caps amid renewed pressure on retail fuel prices.",Policy,Medium
